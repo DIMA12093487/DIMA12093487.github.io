@@ -15,6 +15,36 @@ nav.querySelectorAll("a").forEach((a) =>
   })
 );
 
+// Кнопка «Почта» — копирование адреса
+const mailBtn = document.getElementById("mailBtn");
+if (mailBtn) {
+  const MAIL = "nemgmt@mail.ru";
+  const fallbackCopy = (text) => {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (err) {}
+    document.body.removeChild(ta);
+  };
+  mailBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    mailBtn.textContent = "Скопировано ✓";
+    setTimeout(() => (mailBtn.textContent = "Почта"), 2000);
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(MAIL).catch(() => fallbackCopy(MAIL));
+      } else {
+        fallbackCopy(MAIL);
+      }
+    } catch (err) {
+      fallbackCopy(MAIL);
+    }
+  });
+}
+
 // Калькулятор отзывов
 const cnt = document.getElementById("cnt");
 const cntVal = document.getElementById("cntVal");
