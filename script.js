@@ -18,7 +18,7 @@ nav.querySelectorAll("a").forEach((a) =>
 // Кнопка «Почта» — копирование адреса
 const mailBtn = document.getElementById("mailBtn");
 if (mailBtn) {
-  const MAIL = "nemgmt@mail.ru";
+  const MAIL = "repustar@yandex.com";
   const fallbackCopy = (text) => {
     const ta = document.createElement("textarea");
     ta.value = text;
