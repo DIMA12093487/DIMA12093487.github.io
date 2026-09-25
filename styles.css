@@ -44,13 +44,14 @@ body {
 }
 .header-inner { display: flex; align-items: center; gap: 28px; height: 68px; }
 
-.logo { font-family: var(--font-head); font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.logo { font-family: var(--font-head); font-weight: 800; font-size: 21px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0; }
 .logo span { color: var(--ink); }
 .logo-mark {
   display: inline-flex; align-items: center; justify-content: center;
   width: 30px; height: 30px; border-radius: 9px;
   background: var(--accent); color: #241a02; font-size: 16px; line-height: 1;
   flex-shrink: 0;
+  margin-right: 8px;
 }
 
 .nav { display: flex; gap: 22px; margin-left: auto; }
