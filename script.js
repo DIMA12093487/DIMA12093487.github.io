@@ -15,32 +15,42 @@ nav.querySelectorAll("a").forEach((a) =>
   })
 );
 
-// Кнопка «Почта» — копирование адреса
-const mailBtn = document.getElementById("mailBtn");
-if (mailBtn) {
-  const MAIL = "repustar@yandex.com";
-  const fallbackCopy = (text) => {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); } catch (err) {}
-    document.body.removeChild(ta);
-  };
-  mailBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    mailBtn.textContent = "Скопировано ✓";
-    setTimeout(() => (mailBtn.textContent = "Почта"), 2000);
+// Заявка отправляется на сервер, который пересылает её владельцу в личный Telegram.
+const leadForm = document.getElementById("leadForm");
+if (leadForm) {
+  const submitButton = leadForm.querySelector('button[type="submit"]');
+  const formNote = document.getElementById("formNote");
+  leadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (submitButton.disabled || !leadForm.reportValidity()) return;
+
+    const data = {
+      name: document.getElementById("leadName").value.trim(),
+      contact: document.getElementById("leadContact").value.trim(),
+      card: document.getElementById("leadCard").value.trim(),
+      task: document.getElementById("leadTask").value.trim(),
+      website: document.getElementById("leadWebsite")?.value || ""
+    };
+    submitButton.disabled = true;
+    submitButton.textContent = "Отправляем...";
+    formNote.textContent = "Отправляем заявку...";
+    formNote.dataset.state = "";
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(MAIL).catch(() => fallbackCopy(MAIL));
-      } else {
-        fallbackCopy(MAIL);
-      }
-    } catch (err) {
-      fallbackCopy(MAIL);
+      const response = await fetch("https://repustar-leads.coolfreezezzz.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error("Delivery failed");
+      leadForm.reset();
+      formNote.textContent = "Заявка отправлена! Мы сами напишем вам по указанному контакту.";
+      formNote.dataset.state = "success";
+    } catch {
+      formNote.textContent = "Не удалось отправить заявку. Попробуйте ещё раз или напишите на repustar@yandex.com.";
+      formNote.dataset.state = "error";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Отправить заявку";
     }
   });
 }
