@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=8">
-  <link rel="stylesheet" href="refresh.css?v=1">
+  <link rel="stylesheet" href="refresh.css?v=2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -308,8 +308,23 @@
   <!-- CONTACTS -->
   <section class="section section-cta" id="contacts">
     <div class="wrap wrap-narrow cta-box">
-      <h2>Оставьте заявку — мы напишем вам сами</h2>
-      <p>Укажите ссылку на организацию и контакт для ответа. Посмотрим рейтинг, отзывы и видимость в выдаче, затем лично предложим план и назовём цену. Бесплатно и ни к чему не обязывает.</p>
+      <h2>Как вам удобнее связаться?</h2>
+      <p>Выберите способ: оставьте заявку — мы напишем вам сами, или напишите нам напрямую.</p>
+      <nav class="contact-choices" aria-label="Способы связи">
+        <a class="contact-choice" href="#leadForm">
+          <span class="contact-choice-num">01</span>
+          <span class="contact-choice-copy"><strong>Оставить заявку</strong><small>Мы напишем вам сами</small></span>
+          <span class="contact-choice-arrow" aria-hidden="true">↘</span>
+        </a>
+        <a class="contact-choice contact-choice-direct" href="#writeDirect">
+          <span class="contact-choice-num">02</span>
+          <span class="contact-choice-copy"><strong>Написать напрямую</strong><small>Вы пишете нам первыми</small></span>
+          <span class="contact-choice-arrow" aria-hidden="true">↘</span>
+        </a>
+      </nav>
+      <div class="contact-path-form">
+        <h3>Оставьте заявку — мы напишем вам сами</h3>
+        <p>Укажите ссылку на организацию и контакт для ответа. Посмотрим карточку, предложим план и назовём цену. Бесплатно и ни к чему не обязывает.</p>
       <form class="lead-form" id="leadForm">
         <div class="lead-form-grid">
           <label>
@@ -333,10 +348,16 @@
         <button class="btn btn-accent btn-block" type="submit">Отправить заявку</button>
         <p class="form-note" id="formNote" aria-live="polite">Отправьте заявку — мы сами свяжемся с вами по указанному контакту.</p>
       </form>
-      <div class="contact-grid">
-        <a class="btn contact-btn ct-tg" href="https://t.me/repustar" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn contact-btn ct-wa" href="https://wa.me/79535540146" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn contact-btn ct-mail" href="mailto:repustar@yandex.com">Почта</a>
+      </div>
+      <div class="contact-path-direct" id="writeDirect">
+        <span class="contact-path-num">02 / НАПРЯМУЮ</span>
+        <h3>Хотите написать нам сами?</h3>
+        <p>Выберите удобный мессенджер и расскажите о своей карточке. Ответим лично.</p>
+        <div class="contact-grid">
+          <a class="btn contact-btn ct-tg" href="https://t.me/repustar" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+          <a class="btn contact-btn ct-wa" href="https://wa.me/79535540146" target="_blank" rel="noopener">Написать в WhatsApp ↗</a>
+        </div>
+        <p class="contact-mail">Или на <a href="mailto:repustar@yandex.com">repustar@yandex.com</a></p>
       </div>
       <p class="cta-hint">отвечаем в течение часа, 10:00–22:00 мск · Telegram: @repustar · WhatsApp: +7 953 554-01-46</p>
     </div>
