@@ -7,6 +7,10 @@
   --radius:18px; --radius-lg:24px;
 }
 body { font-size:18px; line-height:1.65; }
+p, li, summary, .case-line, .contact-choice-copy { text-wrap:pretty; }
+h1, h2, h3, .case-title, .case-score, .calc-gift { text-wrap:balance; }
+.case-title { min-width:0; flex:1; }
+.svc-f-copy, .svc-f-price, .svc-card, .guar-item, .case-card, .step > div { min-width:0; }
 .wrap { max-width:1220px; padding:0 30px; }
 .wrap-narrow { max-width:880px; }
 :where(a,button,input,textarea,summary):focus-visible { outline:3px solid #a75b14; outline-offset:4px; }
@@ -133,7 +137,7 @@ h2 { font-size:clamp(39px,4.4vw,54px); line-height:1.12; letter-spacing:-.045em;
 .contact-path-num { display:block; margin-bottom:17px; color:#f1b449; font:700 13px 'Unbounded',sans-serif; letter-spacing:.04em; }
 .contact-path-direct h3 { margin:0; }
 .contact-path-direct > p { color:#e6d9c5; font-size:17px; line-height:1.55; margin:12px 0 24px; }
-.contact-path-direct .contact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.contact-path-direct .contact-grid { grid-template-columns:minmax(0,1fr); }
 .contact-path-direct .contact-btn { min-height:58px; padding:14px 12px; font-size:16px; line-height:1.35; text-align:center; }
 .contact-path-direct .contact-mail { margin:20px 0 0; color:#d9cbb6; font-size:14px; }
 .contact-mail a { color:#ffd687; text-underline-offset:3px; }
@@ -182,6 +186,7 @@ h2 { font-size:clamp(39px,4.4vw,54px); line-height:1.12; letter-spacing:-.045em;
   .hero-visual { justify-content:flex-start; padding:12px 0 0; }
   .hero-facts { order:0; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:0; }
   .svc-featured { grid-template-columns:1fr; }
+  .svc-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .svc-f-price { border-left:0; border-top:1px solid var(--line-dark); }
   .case-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .case-card:last-child { grid-column:1/-1; }
@@ -234,6 +239,9 @@ h2 { font-size:clamp(39px,4.4vw,54px); line-height:1.12; letter-spacing:-.045em;
   .hero-facts { grid-template-columns:1fr; }
   .hero-facts li { min-height:0; }
   .contact-grid { grid-template-columns:1fr; }
+  .step { position:relative; grid-template-columns:minmax(0,1fr); }
+  .step-num { position:absolute; top:21px; left:17px; }
+  .step h3 { padding-left:58px; min-height:43px; margin-bottom:12px; display:flex; align-items:center; }
 }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }

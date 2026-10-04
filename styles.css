@@ -316,7 +316,6 @@ h2 { font-size: 32px; letter-spacing: -0.5px; font-weight: 800; margin-bottom: 8
 }
 .contact-btn:hover { transform: translateY(-2px); }
 .ct-tg { background: #2aabee; }
-.ct-wa { background: #248f56; }
 .ct-mail { background: #6e6759; }
 
 .mobile-cta { display: none; }
