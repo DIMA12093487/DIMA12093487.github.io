@@ -29,7 +29,7 @@
     const targets = document.querySelectorAll(
       'section.section .eyebrow, section.section h2, section.section .section-sub, ' +
       '.svc-featured, .svc-card, .guar-item, .step, .case-card, .faq-item, ' +
-      '.lead-form, .contact-grid'
+      '.lead-form, .contact-grid, .mix-row, .project-copy, .project-actions'
     );
     targets.forEach((element) => {
       // Never conceal content already visible before the observer is ready.
