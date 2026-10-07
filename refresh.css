@@ -81,7 +81,7 @@ h2 { font-size:clamp(39px,4.4vw,54px); line-height:1.12; letter-spacing:-.045em;
 .section-dark { background:#29241e; }
 .section-sub-dark { color:#d6c8b6; }
 #how { border-bottom:1px solid #69533a; }
-.steps { gap:12px; }
+.steps { gap:12px; grid-auto-rows:1fr; }
 .step { padding:23px 28px; grid-template-columns:60px 1fr; align-items:start; border:1px solid rgba(241,212,158,.22); border-radius:16px; background:rgba(255,255,255,.045); transition:background .3s ease,border-color .3s ease,translate .4s ease,opacity .7s ease; }
 .step:last-child { border:1px solid rgba(241,212,158,.22); }
 .step:hover { background:rgba(255,255,255,.09); border-color:rgba(241,212,158,.52); translate:4px 0; }
