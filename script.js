@@ -55,6 +55,13 @@ if (leadForm) {
   });
 }
 
+// Цены по достигнутому порогу объёма, без подарочных отзывов.
+function reviewUnitPrice(n) {
+  for (const [min, price] of [[1000,650],[500,700],[300,750],[200,800],[100,850],[50,900]]) {
+    if (n >= min) return price;
+  }
+  return 950;
+}
 // Калькулятор отзывов
 const cnt = document.getElementById("cnt");
 const cntVal = document.getElementById("cntVal");
@@ -64,16 +71,36 @@ const giftVal = document.getElementById("giftVal");
 if (cnt && cntVal && totalVal) {
   const update = () => {
     const n = Number(cnt.value);
-    const gift = Math.floor(n / 10);
-    const paid = n - gift;
+    const unit = reviewUnitPrice(n);
     cntVal.textContent = n;
-    totalVal.textContent = (paid * 900).toLocaleString("ru-RU") + " ₽";
-    if (giftVal) {
-      giftVal.textContent = gift > 0
-        ? "в подарок " + gift + " отз. · экономия " + (gift * 900).toLocaleString("ru-RU") + " ₽"
-        : "каждый 10-й отзыв — в подарок";
-    }
+    totalVal.textContent = (n * unit).toLocaleString("ru-RU") + " ₽";
+    const unitVal = document.getElementById("unitVal");
+    if (unitVal) unitVal.textContent = "по " + unit + " ₽ за отзыв";
+    if (giftVal) giftVal.textContent = unit < 950
+      ? "экономия " + (n * (950 - unit)).toLocaleString("ru-RU") + " ₽ относительно цены 950 ₽/шт"
+      : "Скидка за объём: от 50 отзывов";
   };
   cnt.addEventListener("input", update);
   update();
 }
+
+// Выбранный пакет или пробный отзыв попадает в существующее поле заявки.
+function prepareReviewOrder(text) {
+  const field = document.getElementById("leadTask");
+  if (!field) return;
+  const previous = field.value.split("\n").filter(line => !line.startsWith("Заказ: ")).join("\n").trim();
+  field.value = ("Заказ: " + text + (previous ? "\n" + previous : "")).slice(0,1000);
+}
+document.querySelectorAll("[data-package-count]").forEach(link => {
+  link.addEventListener("click", () => {
+    const n = Number(link.dataset.packageCount);
+    cnt.value = n;
+    cnt.dispatchEvent(new Event("input", {bubbles:true}));
+    prepareReviewOrder("пакет «" + link.dataset.packageName + "», " + n + " отзывов, " + reviewUnitPrice(n) + " ₽/шт, итого " + (n * reviewUnitPrice(n)).toLocaleString("ru-RU") + " ₽.");
+  });
+});
+document.querySelectorAll("[data-trial]").forEach(link => link.addEventListener("click", () => prepareReviewOrder("1 пробный отзыв бесплатно. Новый клиент; условия согласовать по карточке.")));
+document.querySelectorAll("[data-order-calculator]").forEach(link => link.addEventListener("click", () => {
+  const n = Number(cnt.value);
+  prepareReviewOrder(n + " отзывов, " + reviewUnitPrice(n) + " ₽/шт, итого " + (n * reviewUnitPrice(n)).toLocaleString("ru-RU") + " ₽.");
+}));

@@ -1,0 +1,29 @@
+/* Ready-made packages: same existing warm poster palette. */
+.package-section { background:#f7efdf; }
+.pack-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:stretch; }
+.pack-card { display:flex; flex-direction:column; min-width:0; padding:28px; border:1px solid #d8c6a8; border-radius:20px; background:#fffdf9; }
+.pack-featured { border:2px solid #b87626; background:#fff6e4; box-shadow:0 15px 35px -25px #a76a26; }
+.pack-kicker,.pack-badge { align-self:start; font-size:13px; font-weight:700; min-height:28px; margin-bottom:18px; }
+.pack-badge { padding:4px 10px; color:#fff; background:#885014; border-radius:6px; }
+.pack-kicker { padding-top:4px; color:#72634d; }
+.pack-card h3 { font-family:var(--font-head); font-size:23px; line-height:1.3; margin:0 0 17px; }
+.pack-count { font-size:39px; font-weight:800; line-height:1.2; margin-bottom:20px; }
+.pack-count span { font-size:17px; font-weight:500; }
+.pack-price { font-size:32px; font-weight:800; line-height:1.25; }
+.pack-price small { display:block; font-size:14px; font-weight:500; color:#71634f; margin-top:5px; }
+.pack-unit { margin:15px 0; font-size:17px; font-weight:700; color:#83511c; }
+.pack-description { font-size:16px; line-height:1.55; margin-bottom:24px; flex:1; }
+.pack-card .btn { margin-top:auto; white-space:normal; }
+.pack-upgrade { padding:18px 0; font-size:17px; color:#685335; }
+.pack-large { margin-top:12px; border-top:1px solid #d8c6a8; }
+.pack-large summary { cursor:pointer; padding:22px 0; font-size:19px; font-weight:700; }
+.pack-grid-large { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.pack-grid-large .pack-card { padding:23px; }
+.pack-grid-large .pack-card h3 { font-size:19px; }
+.pack-grid-large .pack-price { font-size:27px; }
+.pack-note { font-size:15px; color:#71634f; margin-top:22px; max-width:850px; }
+.trial-offer { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:center; margin-top:34px; padding:28px; border-radius:18px; background:#ead5af; }
+.trial-offer h3 { font-size:28px; line-height:1.3; margin:0 0 10px; }
+.trial-offer p:not(.eyebrow) { max-width:690px; font-size:16px; line-height:1.55; }
+@media(max-width:1000px) { .pack-grid-large { grid-template-columns:repeat(2,minmax(0,1fr)); } .pack-card {padding:22px;} .pack-price {font-size:28px;} }
+@media(max-width:720px) { .pack-grid,.pack-grid-large { grid-template-columns:minmax(0,1fr); } .trial-offer { grid-template-columns:minmax(0,1fr); padding:23px; } .trial-offer .btn { width:100%; white-space:normal; } .pack-card {padding:26px;} .pack-card h3 {font-size:24px;} }
