@@ -1,0 +1,18 @@
+/* Floating order benefits; same first card, no invented client statuses. */
+.order-card.order-rotator {animation:orderFloat 7s ease-in-out infinite;max-width:100%;}
+@keyframes orderFloat {0%,100% {transform:translateY(0) rotate(1.5deg);}50% {transform:translateY(-13px) rotate(-1deg);}}
+.order-rotator:hover,.order-rotator:focus-within {animation-play-state:paused;}
+.order-deck {display:grid;min-width:0;}
+.order-panel {grid-area:1/1;min-width:0;opacity:1;visibility:visible;transform:translateY(0);transition:opacity .3s ease,transform .3s ease,visibility .3s;}
+.order-panel[aria-hidden=true] {opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px);}
+.order-panel h2 {min-height:2.6em;display:flex;align-items:center;}
+.order-panel a {display:inline-flex;align-items:center;min-height:44px;}
+.order-switcher {display:flex;align-items:center;justify-content:space-between;gap:4px;border-top:1px solid #dfd2bd;margin-top:13px;padding-top:9px;}
+.order-switcher button {width:40px;height:40px;border:0;border-radius:50%;background:transparent;cursor:pointer;font:inherit;font-size:19px;color:#76501f;position:relative;}
+.order-switcher button:hover {background:#f1e2c6;}
+.order-dots {display:flex;}
+.order-dots button {width:36px;}
+.order-dots button:after {content:'';position:absolute;width:7px;height:7px;top:16px;left:14px;border-radius:50%;background:#cebea5;}
+.order-dots button[aria-current=true]:after {background:#956024;}
+@media(max-width:720px) {.order-card.order-rotator {width:min(100%,360px);} @keyframes orderFloat {0%,100% {transform:translateY(0) rotate(.7deg);}50% {transform:translateY(-9px) rotate(-.6deg);}}}
+@media(prefers-reduced-motion:reduce) {.order-card.order-rotator {animation:none;transform:none;}.order-panel {transition:none;}}
