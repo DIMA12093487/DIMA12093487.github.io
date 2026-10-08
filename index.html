@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="packages.css?v=1">
   <link rel="stylesheet" href="mix.css?v=1">
   <link rel="stylesheet" href="copy.css?v=1">
+  <link rel="stylesheet" href="proof.css?v=1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,10 +39,10 @@
   <div class="wrap header-inner">
     <a class="logo" href="#top"><span class="logo-mark">★</span>РепуСтар</a>
     <nav class="nav" id="nav">
+      <a href="#cases">Работы</a>
       <a href="#packages">Пакеты</a>
       <a href="#how">Как работаем</a>
       <a href="#guarantees">Гарантии</a>
-      <a href="#cases">Опыт</a>
       <a href="#faq">Вопросы</a>
     </nav>
     <a class="btn btn-accent btn-header" href="#contacts">Бесплатный разбор</a>
@@ -89,6 +90,13 @@
       </div>
     </div>
   </section>
+
+  <!-- VERIFIED CASES: reported volume, not invented rating uplift -->
+  <section class="section proof-section" id="cases"><div class="wrap">
+    <div class="proof-heading"><div><p class="eyebrow">Наши работы</p><h2>Примеры одной сети</h2></div><div class="proof-controls"><button type="button" id="proofPrev" aria-label="Предыдущий пример">←</button><span id="proofCounter" aria-live="off">1 / 3</span><button type="button" id="proofNext" aria-label="Следующий пример">→</button></div></div>
+    <div class="proof-track" id="proofTrack" tabindex="0" role="region" aria-label="Примеры работы с салонами ЗОВ"><article class="proof-slide" aria-label="Пример 1 из 3"><div class="proof-copy"><span class="proof-tag">Мебельные салоны · сеть ЗОВ</span><h3>ЗОВ · Домодедово</h3><p class="proof-address">Каширское шоссе, 17Г</p><a class="proof-link" href="https://yandex.ru/maps/org/133491207297/" target="_blank" rel="noopener">Открыть карточку на Яндекс Картах ↗</a></div><div class="proof-result"><strong>19</strong><span>подтверждённых публикаций</span><small>сентябрь 2026</small></div></article><article class="proof-slide" aria-label="Пример 2 из 3"><div class="proof-copy"><span class="proof-tag">Мебельные салоны · сеть ЗОВ</span><h3>ЗОВ · Новоивановское</h3><p class="proof-address">Луговая улица, 1</p><a class="proof-link" href="https://yandex.ru/maps/org/112090838895/" target="_blank" rel="noopener">Открыть карточку на Яндекс Картах ↗</a></div><div class="proof-result"><strong>16</strong><span>подтверждённых публикаций</span><small>сентябрь 2026</small></div></article><article class="proof-slide" aria-label="Пример 3 из 3"><div class="proof-copy"><span class="proof-tag">Мебельные салоны · сеть ЗОВ</span><h3>ЗОВ · Видное</h3><p class="proof-address">проспект Ленинского Комсомола, 9А</p><a class="proof-link" href="https://yandex.ru/maps/org/75774687714/" target="_blank" rel="noopener">Открыть карточку на Яндекс Картах ↗</a></div><div class="proof-result"><strong>14</strong><span>подтверждённых публикаций</span><small>сентябрь 2026</small></div></article></div>
+    <div class="proof-bottom"><p>Объём по отчёту и проверке за сентябрь 2026. Это не замер роста рейтинга.</p><div class="proof-dots" aria-label="Выбрать пример"><button type="button" data-proof-index="0" aria-label="Домодедово" aria-current="true"></button><button type="button" data-proof-index="1" aria-label="Новоивановское" aria-current="false"></button><button type="button" data-proof-index="2" aria-label="Видное" aria-current="false"></button></div></div>
+  </div></section>
 
   <section class="section package-section" id="packages"><div class="wrap"><p class="eyebrow">Пакеты отзывов</p><h2>Больше объём — ниже цена</h2><p class="section-sub">Цена за весь пакет. Отчёт входит в стоимость.</p><div class="pack-grid"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Старт</h3><p class="pack-count">10 <span>отзывов</span></p><p class="pack-price">9 500 ₽ <small>за весь пакет</small></p><p class="pack-unit">950 ₽ за отзыв</p><p class="pack-description">Для небольшого заказа</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="10" data-package-name="Старт">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>База</h3><p class="pack-count">50 <span>отзывов</span></p><p class="pack-price">45 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">900 ₽ за отзыв</p><p class="pack-description">Для регулярной работы</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="50" data-package-name="База">Выбрать пакет</a></article><article class="pack-card pack-featured"><span class="pack-badge">Рекомендуем</span><h3>Рост</h3><p class="pack-count">100 <span>отзывов</span></p><p class="pack-price">85 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">850 ₽ за отзыв</p><p class="pack-description">На 5 000 ₽ дешевле двух пакетов «база»</p><a href="#leadForm" class="btn btn-accent btn-block" data-package-count="100" data-package-name="Рост">Выбрать пакет</a></article></div><p class="pack-upgrade">Переход с «базы» на «рост»: ещё 50 отзывов за 40 000 ₽.</p><details class="pack-large" id="largePackages"><summary>Нужно больше? Пакеты на 200–1 000 отзывов</summary><div class="pack-grid pack-grid-large"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Масштаб</h3><p class="pack-count">200 <span>отзывов</span></p><p class="pack-price">160 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">800 ₽ за отзыв</p><p class="pack-description">На 10 000 ₽ дешевле двух пакетов «рост»</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="200" data-package-name="Масштаб">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Сеть</h3><p class="pack-count">300 <span>отзывов</span></p><p class="pack-price">225 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">750 ₽ за отзыв</p><p class="pack-description">Для крупных заказов и нескольких точек</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="300" data-package-name="Сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Большая сеть</h3><p class="pack-count">500 <span>отзывов</span></p><p class="pack-price">350 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">700 ₽ за отзыв</p><p class="pack-description">Для крупных заказов и нескольких точек</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="500" data-package-name="Большая сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Индивидуальный</h3><p class="pack-count">1000 <span>отзывов</span></p><p class="pack-price">650 000 ₽ <small>за весь пакет</small></p><p class="pack-unit">650 ₽ за отзыв</p><p class="pack-description">Для крупных заказов и нескольких точек</p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="1000" data-package-name="Индивидуальный">Выбрать пакет</a></article></div></details><p class="pack-note">Крупные объёмы распределяем по карточкам и согласованному графику. Возможность выполнения и сроки обсуждаем до начала работы.</p><div class="trial-offer"><div><p class="eyebrow">Попробуйте перед заказом</p><h3>1 отзыв бесплатно</h3><p>Для новых клиентов — один раз на компанию, без обязательства покупать пакет. Сначала посмотрим карточку и согласуем пробное размещение.</p></div><a class="btn btn-accent" href="#leadForm" data-trial>Получить пробный отзыв</a></div></div></section>
 
@@ -259,45 +267,7 @@
     </div>
   </section>
 
-  <!-- CASES -->
-  <section class="section section-dark" id="cases">
-    <div class="wrap">
-      <p class="eyebrow eyebrow-dark">Направления</p>
-      <h2>Опыт с мебельными&nbsp;салонами</h2>
-      <p class="section-sub section-sub-dark">Работали с отдельными точками и сетью&nbsp;салонов.</p>
 
-      <div class="case-grid">
-        <div class="case-card">
-          <div class="case-top">
-            <span class="case-title">Сеть кухонных&nbsp;салонов</span>
-            <span class="case-badge">Сеть</span>
-          </div>
-          <div class="case-score"><b>Единый подход</b> к&nbsp;филиалам</div>
-          <div class="case-line">График для каждой точки и общий&nbsp;отчёт.</div>
-        </div>
-        <div class="case-card">
-          <div class="case-top">
-            <span class="case-title">Мебельный&nbsp;салон</span>
-            <span class="case-badge">Одна точка</span>
-          </div>
-          <div class="case-score"><b>План роста</b>&nbsp;репутации</div>
-          <div class="case-line">Согласованный объём и контроль&nbsp;публикаций.</div>
-        </div>
-        <div class="case-card">
-          <div class="case-top">
-            <span class="case-title">Новая или просевшая&nbsp;карточка</span>
-            <span class="case-badge">Аудит</span>
-          </div>
-          <div class="case-score"><b>Понятный старт</b> без&nbsp;лишнего</div>
-          <div class="case-line">Оценка карточки до&nbsp;заказа.</div>
-        </div>
-      </div>
-
-      <p class="cases-note">Карточки клиентов показываем с их&nbsp;согласия.</p>
-    </div>
-  </section>
-
-  <!-- PROJECT: a short bridge from information to conversation -->
   <section class="section mix-project" id="project">
     <div class="wrap project-layout">
       <div class="project-copy">
@@ -420,5 +390,6 @@
 <script src="script.js?v=9"></script>
 <script src="motion.js?v=2"></script>
 <script src="typography.js?v=1"></script>
+<script src="proof.js?v=1"></script>
 </body>
 </html>
