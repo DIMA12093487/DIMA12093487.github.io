@@ -19,9 +19,10 @@
   <link rel="stylesheet" href="styles.css?v=9">
   <link rel="stylesheet" href="refresh.css?v=4">
   <link rel="stylesheet" href="packages.css?v=2">
-  <link rel="stylesheet" href="mix.css?v=3">
-  <link rel="stylesheet" href="copy.css?v=1">
+  <link rel="stylesheet" href="mix.css?v=4">
+  <link rel="stylesheet" href="copy.css?v=2">
   <link rel="stylesheet" href="proof.css?v=1">
+  <link rel="stylesheet" href="reputation.css?v=1">
 
   <script type="application/ld+json">
   {
@@ -39,6 +40,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="#top"><span class="logo-mark">★</span>РепуСтар</a>
+    <label class="city-picker"><span>Ваш город</span><select id="citySelect" aria-label="Выберите город">
+      <option value="moscow">Москва</option><option value="spb">Санкт-Петербург</option><option value="kazan">Казань</option><option value="ekb">Екатеринбург</option><option value="nsk">Новосибирск</option><option value="krasnodar">Краснодар</option><option value="russia">Вся Россия</option>
+    </select></label>
     <nav class="nav" id="nav">
       <a href="#cases">Работы</a>
       <a href="#packages">Пакеты</a>
@@ -57,10 +61,16 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-map" aria-hidden="true"><svg viewBox="0 0 900 700" preserveAspectRatio="xMidYMid slice">
+      <g class="map-streets" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M-100 130H320L500 310H1000M-100 540H390L570 360H1000M170-100V230L360 420V800M650-100V180L450 380V800M-100 370H250L450 170H1000M-100 640L180 360V-100M790-100V500L490 800"/><circle cx="500" cy="310" r="110"/><circle cx="500" cy="310" r="230"/><circle cx="500" cy="310" r="340"/></g>
+      <path class="map-route" d="M-100 540H390L570 360H1000" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 18"/>
+      <g class="map-pin" transform="translate(500 310)"><circle class="map-pulse" r="35" fill="none" stroke="currentColor"/><circle r="8" fill="currentColor"/></g>
+      <g class="map-pin" transform="translate(250 370)"><circle class="map-pulse pulse-delayed" r="25" fill="none" stroke="currentColor"/><circle r="5" fill="currentColor"/></g>
+    </svg></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Опыт работы с сетью мебельных&nbsp;салонов</p>
-        <h1>Отзывы на Яндекс Картах<br><em>с оплатой за&nbsp;публикацию</em></h1>
+        <h1>Отзывы на Яндекс Картах <span id="heroCity">в Москве</span><br><em>с оплатой за&nbsp;публикацию</em></h1>
         <p class="lead">
           Выбираете объём. Мы согласуем сроки и ведём работу.
           Вы следите за публикациями в онлайн-таблице.
@@ -99,6 +109,16 @@
       </div>
     </div>
   </section>
+
+  <section class="section reputation-section" id="why"><div class="wrap reputation-layout">
+    <div class="reputation-intro"><p class="eyebrow">Репутация работает на бизнес</p><h2>Зачем мне это</h2><p class="reputation-lead">Пока вы занимаетесь бизнесом, клиент уже выбирает — вас или соседнюю компанию на картах.</p><a class="reputation-link" href="#leadForm">Обсудить мою карточку ↗</a></div>
+    <div class="reputation-list">
+      <article><span class="reputation-num">01 / ДОВЕРИЕ</span><h3>Меньше сомнений перед обращением</h3><p>Свежие положительные отзывы помогают человеку понять, чего ждать от компании — ещё до звонка или визита.</p></article>
+      <article><span class="reputation-num">02 / ВЫБОР</span><h3>Больше причин выбрать вас</h3><p>Когда рядом несколько похожих предложений, хорошая репутация может стать аргументом в вашу пользу и помочь получить больше обращений.</p></article>
+      <article><span class="reputation-num">03 / РАБОТА С НЕГАТИВОМ</span><h3>Один плохой отзыв — не вся история</h3><p>Работаем с негативом: дополняем картину свежей положительной обратной связью, чтобы прошлые жалобы не были единственным впечатлением о бизнесе.</p></article>
+    </div>
+    <p class="reputation-bottom">Помогаем формировать положительную репутацию. Это поддержка доверия, а не замена хорошему сервису.</p>
+  </div></section>
 
   <!-- Illustrative scenarios only: no client identities or claimed outcomes -->
   <section class="section proof-section" id="cases"><div class="wrap">
@@ -150,7 +170,7 @@
 
       <div class="svc-grid">
         <div class="svc-card">
-          <h3>Онлайн-таблица&nbsp;мониторинга</h3>
+          <h3 class="monitoring-title">Онлайн-таблица<span>мониторинга</span></h3>
           <p>Ссылки и статус каждого отзыва. Вы видите, что опубликовано и что&nbsp;удалено.</p>
           <div class="svc-card-price">Бесплатно <span>к каждому&nbsp;заказу</span></div>
           <a class="svc-card-link" href="#contacts">Обсудить →</a>
@@ -238,7 +258,7 @@
           <div class="step-num">5</div>
           <div>
             <h3>Держим&nbsp;результат</h3>
-            <p>Удалённые в течение 30 дней отзывы восстанавливаем&nbsp;бесплатно.</p>
+            <p>Гарантия 30 дней с момента публикации. Если отзыв удалят — восстановим&nbsp;бесплатно.</p>
           </div>
         </li>
       </ol>
@@ -399,6 +419,7 @@
 <script src="script.js?v=9"></script>
 <script src="motion.js?v=2"></script>
 <script src="typography.js?v=1"></script>
+<script src="location.js?v=1"></script>
 <script src="proof.js?v=1"></script>
 
 </body>
