@@ -7,10 +7,15 @@
 .section > .wrap > .eyebrow { display:flex; align-items:center; gap:16px; }
 .section > .wrap > .eyebrow::after { content:""; width:52px; height:1px; background:currentColor; opacity:.45; }
 .pack-card { border-radius:12px; box-shadow:none; }
-.pack-featured { background:#252019; color:#fffdf9; border-color:#252019; }
+.pack-featured { background:#fff; color:#1a1611; border-color:#b87626; }
 .pack-featured .pack-badge { background:#f1b449; color:#252019; }
-.pack-featured .pack-unit { color:#f1c779; }
-.pack-featured .pack-price small { color:#e1d7c7; }
+.pack-featured .pack-unit { color:#1a1611; }
+.pack-featured .pack-price small { color:#71634f; }
+.pack-grid-large .pack-card { background:#171717; color:#fff; border-color:#171717; }
+.pack-grid-large .pack-unit { color:#fff; }
+.pack-grid-large .pack-kicker,.pack-grid-large .pack-price small { color:#d5d5d5; }
+.pack-grid-large .btn-ghost { color:#fff; border-color:#777; background:transparent; }
+.pack-grid-large .btn-ghost:hover { background:#fff; color:#171717; border-color:#fff; }
 .pack-card .btn,.trial-offer .btn { border-radius:9px; }
 .trial-offer { border-radius:12px; }
 .mix-situations { background:#f3eee5; border-top:1px solid #dfd5c4; }
