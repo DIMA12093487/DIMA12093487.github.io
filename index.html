@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="copy.css?v=2">
   <link rel="stylesheet" href="proof.css?v=1">
   <link rel="stylesheet" href="reputation.css?v=1">
+  <link rel="stylesheet" href="hero-cards.css?v=1">
+  <link rel="stylesheet" href="city-picker.css?v=1">
 
   <script type="application/ld+json">
   {
@@ -40,9 +42,11 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href="#top"><span class="logo-mark">★</span>РепуСтар</a>
-    <label class="city-picker"><span>Ваш город</span><select id="citySelect" aria-label="Выберите город">
-      <option value="moscow">Москва</option><option value="spb">Санкт-Петербург</option><option value="kazan">Казань</option><option value="ekb">Екатеринбург</option><option value="nsk">Новосибирск</option><option value="krasnodar">Краснодар</option><option value="russia">Вся Россия</option>
-    </select></label>
+    <label class="city-picker city-pin-picker">
+      <svg class="city-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg>
+      <span class="city-full" aria-hidden="true">Москва</span><span class="city-short" aria-hidden="true">Москва</span><span class="city-chevron" aria-hidden="true">⌄</span>
+      <select id="citySelect" aria-label="Выберите город"><option value="moscow">Москва</option><option value="spb">Санкт-Петербург</option></select>
+    </label>
     <nav class="nav" id="nav">
       <a href="#cases">Работы</a>
       <a href="#packages">Пакеты</a>
@@ -87,25 +91,29 @@
         </ul>
       </div>
 
-      <div class="hero-visual">
-        <div class="rating-card">
-          <div class="rc-head">
-            <div class="rc-avatar">К</div>
-            <div>
-              <div class="rc-name">Кафе «Мята»</div>
-              <div class="rc-cat">Пример оформления · данные условные</div>
-            </div>
-          </div>
-          <div class="rc-score">
-            <div class="rc-num">4.9</div>
-            <div class="rc-stars">★★★★★</div>
-            <div class="rc-count">387 отзывов</div>
-          </div>
-          <div class="rc-meta">
-            <span class="rc-badge">Рейтинг вырос с 4.2</span>
-            <span class="rc-badge rc-badge-warm">Топ-3 в районе</span>
-          </div>
+      <div class="hero-visual hero-examples" role="region" aria-label="Условные примеры оформления карточек">
+        <div class="hero-deck">
+          <article class="rating-card hero-rating is-active" aria-label="Условный пример 1 из 3" aria-hidden="false">
+            <div class="rc-head"><div class="rc-avatar">К</div><div><div class="rc-name">Кафе «Мята»</div><div class="rc-cat">Пример оформления · данные условные</div></div></div>
+            <div class="rc-score"><div class="rc-num">4.9</div><div class="rc-stars">★★★★★</div><div class="rc-count">387 отзывов</div></div>
+            <div class="rc-meta"><span class="rc-badge">Рейтинг вырос с 4.2</span><span class="rc-badge rc-badge-warm">Топ-3 в районе</span></div>
+          </article>
+          <article class="rating-card hero-rating" aria-label="Условный пример 2 из 3" aria-hidden="true" inert>
+            <div class="rc-head"><div class="rc-avatar">А</div><div><div class="rc-name">Автосервис «Точка»</div><div class="rc-cat">Пример оформления · данные условные</div></div></div>
+            <div class="rc-score"><div class="rc-num">4.8</div><div class="rc-stars">★★★★★</div><div class="rc-count">126 отзывов</div></div>
+            <div class="rc-meta"><span class="rc-badge">Рейтинг вырос с 3.8</span><span class="rc-badge rc-badge-warm">Свежие отзывы</span></div>
+          </article>
+          <article class="rating-card hero-rating" aria-label="Условный пример 3 из 3" aria-hidden="true" inert>
+            <div class="rc-head"><div class="rc-avatar">С</div><div><div class="rc-name">Салон «Линия»</div><div class="rc-cat">Пример оформления · данные условные</div></div></div>
+            <div class="rc-score"><div class="rc-num">4.9</div><div class="rc-stars">★★★★★</div><div class="rc-count">214 отзывов</div></div>
+            <div class="rc-meta"><span class="rc-badge">Рейтинг вырос с 4.1</span><span class="rc-badge rc-badge-warm">Больше доверия</span></div>
+          </article>
         </div>
+        <div class="hero-card-controls"><div class="hero-card-dots" aria-label="Выбрать пример">
+          <button type="button" data-hero-index="0" aria-label="Кафе Мята" aria-current="true"><span></span></button>
+          <button type="button" data-hero-index="1" aria-label="Автосервис Точка" aria-current="false"><span></span></button>
+          <button type="button" data-hero-index="2" aria-label="Салон Линия" aria-current="false"><span></span></button>
+        </div><button type="button" id="heroCardsPause" aria-label="Остановить смену карточек" aria-pressed="false">Ⅱ</button></div>
       </div>
     </div>
   </section>
@@ -419,7 +427,8 @@
 <script src="script.js?v=9"></script>
 <script src="motion.js?v=2"></script>
 <script src="typography.js?v=1"></script>
-<script src="location.js?v=1"></script>
+<script src="location.js?v=2"></script>
+<script src="hero-cards.js?v=1"></script>
 <script src="proof.js?v=1"></script>
 
 </body>

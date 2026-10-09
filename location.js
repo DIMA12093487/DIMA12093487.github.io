@@ -2,9 +2,13 @@
   const select = document.getElementById('citySelect');
   const heading = document.getElementById('heroCity');
   if (!select || !heading) return;
-  const locations = { moscow:'в Москве', spb:'в Санкт-Петербурге', kazan:'в Казани', ekb:'в Екатеринбурге', nsk:'в Новосибирске', krasnodar:'в Краснодаре', russia:'по всей России' };
+  const locations = { moscow:'в Москве', spb:'в Санкт-Петербурге' };
   try { const saved = localStorage.getItem('repustar-city'); if (Object.hasOwn(locations, saved)) select.value = saved; } catch {}
-  const apply = () => { heading.textContent = locations[select.value] || locations.moscow; };
+  const apply = () => {
+    heading.textContent = locations[select.value] || locations.moscow;
+    document.querySelector('.city-full').textContent = select.selectedOptions[0].textContent;
+    document.querySelector('.city-short').textContent = select.value === 'spb' ? 'СПБ' : 'Москва';
+  };
   apply();
   select.addEventListener('change', () => {
     apply();

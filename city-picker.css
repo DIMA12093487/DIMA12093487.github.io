@@ -1,0 +1,8 @@
+.city-pin-picker { position:relative; display:flex; flex-direction:row; align-items:center; gap:7px; min-height:44px; color:#252019; cursor:pointer; }
+.city-pin-picker > span { color:inherit; font-size:12px; font-weight:800; line-height:1.2; text-transform:uppercase; letter-spacing:.035em; }
+.city-pin { width:19px; height:23px; flex:none; }
+.city-pin-picker .city-short { display:none; }
+.city-pin-picker .city-chevron { font-size:17px; font-weight:500; }
+.city-pin-picker select { position:absolute; inset:0; width:100%; height:100%; max-width:none; min-height:44px; opacity:0; padding:0; }
+.city-pin-picker:focus-within { outline:2px solid #995713; outline-offset:4px; border-radius:4px; }
+@media(max-width:720px) { .city-pin-picker .city-full { display:none; } .city-pin-picker .city-short { display:block; } .city-pin-picker { gap:4px; } .city-pin { width:17px; } }

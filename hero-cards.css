@@ -1,0 +1,19 @@
+.hero-examples { min-width:0; display:flex; flex-direction:column; align-items:flex-start; }
+.hero-deck { position:relative; display:grid; max-width:340px; width:100%; isolation:isolate; }
+.hero-deck::before,.hero-deck::after { content:""; position:absolute; inset:4px; background:#f8efd9; border:1px solid #d4bc8f; border-radius:var(--radius-lg); z-index:-1; transform:rotate(-5deg); }
+.hero-deck::after { transform:rotate(4deg); background:#fff7e8; }
+.hero-deck .hero-rating { grid-area:1/1; width:100%; animation:none; transform:none; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .45s ease,translate .45s ease; translate:0 9px; position:relative; z-index:0; }
+.hero-deck .hero-rating.is-active { opacity:1; visibility:visible; pointer-events:auto; translate:0 0; z-index:1; }
+.hero-rating .rc-head > div:last-child { min-width:0; }
+.hero-rating .rc-name { font-size:15px; }
+.hero-rating .rc-cat { font-size:11px; line-height:1.45; margin-top:4px; }
+.hero-rating .rc-meta { display:flex; flex-wrap:wrap; gap:7px; }
+.hero-rating .rc-badge { font-size:11px; white-space:normal; }
+.hero-card-controls { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; max-width:340px; margin-top:14px; }
+.hero-card-dots { display:flex; }
+.hero-card-controls button { display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:transparent; border:0; cursor:pointer; color:#4f3920; font-size:17px; border-radius:8px; }
+.hero-card-dots span { width:7px; height:7px; background:#8d7653; border-radius:50%; transition:width .25s,background .25s; }
+.hero-card-dots [aria-current=true] span { width:24px; border-radius:5px; background:#252019; }
+.hero-card-controls button:hover { background:rgba(255,255,255,.4); }
+@media(max-width:920px) { .hero-deck,.hero-card-controls { max-width:500px; } }
+@media(prefers-reduced-motion:reduce) { .hero-deck .hero-rating,.hero-card-dots span { transition:none; } }
