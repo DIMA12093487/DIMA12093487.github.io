@@ -11,11 +11,15 @@
 .pack-featured .pack-badge { background:#f1b449; color:#252019; }
 .pack-featured .pack-unit { color:#1a1611; }
 .pack-featured .pack-price small { color:#71634f; }
-.pack-grid-large .pack-card { background:#171717; color:#fff; border-color:#171717; }
-.pack-grid-large .pack-unit { color:#fff; }
-.pack-grid-large .pack-kicker,.pack-grid-large .pack-price small { color:#d5d5d5; }
-.pack-grid-large .btn-ghost { color:#fff; border-color:#777; background:transparent; }
-.pack-grid-large .btn-ghost:hover { background:#fff; color:#171717; border-color:#fff; }
+.pack-grid-large .pack-card { --pack-bg:#322719; --pack-accent:#f1c779; background:var(--pack-bg); color:#fff; border:1px solid var(--pack-bg); border-top:4px solid var(--pack-accent); }
+.pack-grid-large .pack-card:nth-child(2) { --pack-bg:#19382e; --pack-accent:#b9e1c7; }
+.pack-grid-large .pack-card:nth-child(3) { --pack-bg:#36243c; --pack-accent:#e1bce9; }
+.pack-grid-large .pack-card:nth-child(4) { --pack-bg:#203348; --pack-accent:#b7d9f2; }
+.pack-grid-large .pack-unit { color:var(--pack-accent); }
+.pack-grid-large .pack-unit small { color:#fff; }
+.pack-grid-large .pack-kicker,.pack-grid-large .pack-price small { color:#e0dcd6; }
+.pack-grid-large .btn-ghost { color:var(--pack-bg); border-color:var(--pack-accent); background:var(--pack-accent); }
+.pack-grid-large .btn-ghost:hover { background:#fff; color:var(--pack-bg); border-color:#fff; }
 .pack-card .btn,.trial-offer .btn { border-radius:9px; }
 .trial-offer { border-radius:12px; }
 .mix-situations { background:#f3eee5; border-top:1px solid #dfd5c4; }
