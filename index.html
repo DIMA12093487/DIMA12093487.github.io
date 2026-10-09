@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="reputation.css?v=1">
   <link rel="stylesheet" href="hero-cards.css?v=3">
   <link rel="stylesheet" href="city-picker.css?v=1">
-  <link rel="stylesheet" href="contact-channels.css?v=1">
+  <link rel="stylesheet" href="contact-channels.css?v=2">
 
   <script type="application/ld+json">
   {
@@ -41,6 +41,10 @@
 <body>
 
 <header class="site-header">
+  <div class="header-contact-bar"><div class="wrap header-contact-inner"><nav class="quick-contacts" aria-label="Быстрые контакты"><button class="contact-channel channel-max channel-pending" type="button" disabled title="MAX — контакт пока не указан" aria-label="MAX — контакт пока не указан"><img src="assets/contact-max.svg" alt="" aria-hidden="true" width="24" height="24"></button>
+          <a class="contact-channel channel-tg" href="https://t.me/repustar" target="_blank" rel="noopener" title="Написать в Telegram" aria-label="Написать в Telegram"><img src="assets/contact-telegram.svg" alt="" aria-hidden="true" width="24" height="24"></a>
+          <button class="contact-channel channel-wa channel-pending" type="button" disabled title="WhatsApp — рабочий номер пока не указан" aria-label="WhatsApp — рабочий номер пока не указан"><img src="assets/contact-whatsapp.svg" alt="" aria-hidden="true" width="24" height="24"></button>
+          <a class="contact-channel channel-mail" href="mailto:repustar@yandex.com" title="Написать на почту" aria-label="Написать на почту"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></a></nav></div></div>
   <div class="wrap header-inner">
     <a class="logo" href="#top"><span class="logo-mark">★</span>РепуСтар</a>
     <label class="city-picker city-pin-picker">
@@ -60,10 +64,6 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="header-contact-bar"><div class="wrap header-contact-inner"><span class="header-contact-label">Напишите нам</span><nav class="quick-contacts" aria-label="Быстрые контакты"><button class="contact-channel channel-pending " type="button" disabled title="Контакт MAX пока не указан" aria-label="MAX — скоро">MAX <small>скоро</small></button>
-          <a class="contact-channel " href="https://t.me/repustar" target="_blank" rel="noopener">Telegram <span aria-hidden="true">↗</span></a>
-          <button class="contact-channel channel-pending " type="button" disabled title="Рабочий номер WhatsApp пока не указан" aria-label="WhatsApp — скоро">WhatsApp <small>скоро</small></button>
-          <a class="contact-channel " href="mailto:repustar@yandex.com">Почта <span aria-hidden="true">↗</span></a></nav></div></div>
 </header>
 
 <main id="top">
@@ -92,7 +92,6 @@
       </div>
 
       <div class="hero-visual hero-examples" role="region" aria-label="Условные примеры оформления карточек">
-        <p class="hero-examples-note">Условные примеры</p>
         <div class="hero-deck">
           <article class="rating-card hero-rating" aria-label="Условный пример 1 из 3">
             <div class="rc-head"><div class="rc-avatar">К</div><div><div class="rc-name">Кафе «Мята»</div></div></div>
@@ -405,10 +404,10 @@
         <h3>Хотите написать нам&nbsp;сами?</h3>
         <p>Присылайте ссылку на карточку в Telegram или на&nbsp;почту.</p>
         <div class="contact-grid contact-channels">
-          <button class="contact-channel channel-pending " type="button" disabled title="Контакт MAX пока не указан" aria-label="MAX — скоро">MAX <small>скоро</small></button>
-          <a class="contact-channel " href="https://t.me/repustar" target="_blank" rel="noopener">Telegram <span aria-hidden="true">↗</span></a>
-          <button class="contact-channel channel-pending " type="button" disabled title="Рабочий номер WhatsApp пока не указан" aria-label="WhatsApp — скоро">WhatsApp <small>скоро</small></button>
-          <a class="contact-channel " href="mailto:repustar@yandex.com">Почта <span aria-hidden="true">↗</span></a>
+          <button class="contact-channel channel-max channel-pending" type="button" disabled title="MAX — контакт пока не указан" aria-label="MAX — контакт пока не указан"><img src="assets/contact-max.svg" alt="" aria-hidden="true" width="24" height="24"></button>
+          <a class="contact-channel channel-tg" href="https://t.me/repustar" target="_blank" rel="noopener" title="Написать в Telegram" aria-label="Написать в Telegram"><img src="assets/contact-telegram.svg" alt="" aria-hidden="true" width="24" height="24"></a>
+          <button class="contact-channel channel-wa channel-pending" type="button" disabled title="WhatsApp — рабочий номер пока не указан" aria-label="WhatsApp — рабочий номер пока не указан"><img src="assets/contact-whatsapp.svg" alt="" aria-hidden="true" width="24" height="24"></button>
+          <a class="contact-channel channel-mail" href="mailto:repustar@yandex.com" title="Написать на почту" aria-label="Написать на почту"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></a>
         </div>
         <p class="contact-mail">Или на&nbsp;<a href="mailto:repustar@yandex.com">repustar@yandex.com</a></p>
       </div>
