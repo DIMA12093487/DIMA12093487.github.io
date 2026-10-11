@@ -1,31 +1,19 @@
-// Preserve the intended CSS size unless a protected phrase cannot fit.
-// Inline emphasis and text remain untouched; paragraphs never shrink.
 (() => {
-  const headings = [...document.querySelectorAll('h1,h2,h3,.case-title,.case-score')];
-  const originalSizes = new WeakMap(headings.map(el => [el, el.style.fontSize]));
-  let scheduled = false;
-
-  function fitHeadings() {
-    scheduled = false;
-    headings.forEach(el => { el.style.fontSize = originalSizes.get(el); });
-    for (const el of headings) {
-      if (!el.getClientRects().length || !el.clientWidth) continue;
-      for (let attempt = 0; attempt < 5 && el.scrollWidth > el.clientWidth + 1; attempt++) {
-        const size = parseFloat(getComputedStyle(el).fontSize);
-        el.style.fontSize = `${size * el.clientWidth / el.scrollWidth * 0.985}px`;
-      }
-    }
+ const items=[...document.querySelectorAll('h1,h2,h3,.case-title,.case-score')];
+ const initial=new WeakMap(items.map(e=>[e,e.style.fontSize]));
+ function fit(){
+  for(const e of items){
+   e.style.fontSize=initial.get(e)||'';
+   if(!e.clientWidth)continue;
+   for(let i=0;i<7&&e.scrollWidth>e.clientWidth+1;i++){
+    const size=parseFloat(getComputedStyle(e).fontSize);
+    e.style.fontSize=(size*e.clientWidth/e.scrollWidth*.98)+'px';
+   }
   }
-
-  function scheduleFit() {
-    if (!scheduled) {
-      scheduled = true;
-      requestAnimationFrame(fitHeadings);
-    }
-  }
-
-  window.addEventListener('resize', scheduleFit, { passive: true });
-  document.addEventListener('toggle', scheduleFit, true);
-  if (document.fonts) document.fonts.ready.then(scheduleFit);
-  scheduleFit();
+ }
+ const schedule=()=>{fit();setTimeout(fit,60)};
+ window.addEventListener('load',()=>{schedule();setTimeout(schedule,200)});
+ window.addEventListener('resize',()=>setTimeout(schedule,80),{passive:true});
+ document.fonts?.addEventListener('loadingdone',schedule);
+ document.fonts?.ready.then(schedule);
 })();
