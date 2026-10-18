@@ -1,7 +1,6 @@
 (() => {
   'use strict';
-  const action = document.querySelector('.hero-actions .btn-accent');
-  if (action) {
+  document.querySelectorAll('.hero-actions .btn-accent, .hero-actions [data-trial]').forEach(action => {
     action.classList.add('glow-ring');
     const disc = document.createElement('span');
     disc.className = 'glow-disc';
@@ -13,7 +12,7 @@
         action.classList.toggle('is-inview', entries[0].isIntersecting);
       }).observe(action);
     } else action.classList.add('is-inview');
-  }
+  });
   document.querySelectorAll('[data-package-count]').forEach(link => {
     const label = `Выбрать пакет «${link.dataset.packageName}», ${link.dataset.packageCount} отзывов`;
     link.setAttribute('aria-label', label);

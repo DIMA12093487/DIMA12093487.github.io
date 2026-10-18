@@ -1,10 +1,10 @@
 /* Repustar: a focused action, not a new animated background. */
-.hero-actions .glow-ring {
+.hero-actions .btn.glow-ring {
   display:inline-flex; align-items:center; justify-content:space-between; gap:22px;
   min-height:58px; padding:8px 9px 8px 22px; border-radius:999px;
   background:#346d9e; color:#fff;
 }
-.hero-actions .glow-ring::after { content:none; }
+.hero-actions .btn.glow-ring::after { content:none; }
 .glow-disc {
   position:relative; display:grid; place-items:center; flex:none; width:36px; height:36px;
   border-radius:50%; background:rgba(255,255,255,.10); border:1px solid rgba(221,238,251,.25);

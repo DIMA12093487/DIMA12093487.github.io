@@ -1,0 +1,103 @@
+/* Frosted pastel glass. Layout, pricing and the process route stay intact. */
+:root {
+  --glass-face:rgba(255,255,255,.64);
+  --glass-edge:rgba(255,255,255,.86);
+  --glass-shadow:0 20px 50px -34px rgba(44,88,124,.38),inset 0 1px 0 rgba(255,255,255,.9);
+  --glass-blur:blur(18px) saturate(118%);
+}
+body {
+  background-color:#eaf2f8;
+  background-image:radial-gradient(ellipse 1000px 900px at 100% 1200px,rgba(182,214,237,.6),transparent 74%),radial-gradient(ellipse 900px 1500px at 0 3200px,rgba(204,225,240,.7),transparent 75%);
+}
+.site-header,.site-header.is-scrolled {
+  background:rgba(245,249,252,.76); border-bottom:1px solid rgba(255,255,255,.8);
+  -webkit-backdrop-filter:blur(22px) saturate(120%); backdrop-filter:blur(22px) saturate(120%);
+  box-shadow:0 8px 30px -22px rgba(37,77,106,.3);
+}
+.hero {
+  background:radial-gradient(ellipse at 92% 25%,rgba(153,198,230,.6),transparent 58%),linear-gradient(125deg,#f2f8fc,#d7e8f5);
+  border-bottom:1px solid rgba(255,255,255,.8); border-radius:0 0 42px 42px;
+}
+.hero .order-card,.trial-offer,.guar-item,.faq-item,.lead-form,.contact-choice {
+  background:var(--glass-face); border:1px solid var(--glass-edge); border-radius:28px;
+  -webkit-backdrop-filter:var(--glass-blur); backdrop-filter:var(--glass-blur);
+  box-shadow:var(--glass-shadow);
+}
+.hero .order-card { background:rgba(255,255,255,.58); border-radius:30px; }
+.order-card dl > div { border-color:rgba(103,143,174,.23); }
+.btn,.hero-actions .btn,.trial-offer .btn,.lead-form .btn,.mobile-cta { border-radius:999px; }
+.hero-actions .btn.glow-ring {
+  background:rgba(45,101,148,.93); color:#fff; border-color:rgba(224,239,252,.55);
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+  box-shadow:0 12px 28px -19px rgba(31,77,112,.55),inset 0 1px 0 rgba(255,255,255,.24);
+}
+.hero-actions .btn.glow-ring:hover,.hero-actions .btn.glow-ring:focus-visible { background:rgba(40,87,125,.97); border-color:rgba(234,246,255,.8); color:#fff; }
+.hero-actions .glow-disc { background:rgba(255,255,255,.12); }
+.quick-contacts .contact-channel { background:rgba(255,255,255,.36); border-color:rgba(255,255,255,.56); }
+.contact-channel { background:rgba(255,255,255,.8); border-color:rgba(255,255,255,.82); box-shadow:inset 0 1px 0 #fff; }
+.contact-channel:not(:disabled):hover { background:rgba(225,239,249,.94); }
+.logo-mark { border-radius:12px; }
+#packages,#services,#faq { background:transparent; }
+#packages .pack-grid {
+  border:1px solid var(--glass-edge); border-radius:30px; overflow:hidden;
+  background:rgba(255,255,255,.57); box-shadow:var(--glass-shadow);
+  -webkit-backdrop-filter:var(--glass-blur); backdrop-filter:var(--glass-blur);
+}
+#packages .pack-grid > .pack-card { background:rgba(255,255,255,.10); border-bottom-color:rgba(106,147,177,.20); }
+#packages .pack-grid > .pack-card:last-child { border-bottom:0; }
+#packages .pack-grid > .pack-featured { background:rgba(176,210,234,.56); }
+#packages .pack-badge { border-radius:999px; padding:4px 10px; }
+#packages .pack-grid-large { background:rgba(25,53,76,.95); border-color:rgba(210,231,246,.35); box-shadow:0 24px 50px -34px rgba(25,53,76,.45),inset 0 1px 0 rgba(255,255,255,.14); }
+#packages .pack-grid-large > .pack-card { background:transparent; border-bottom-color:rgba(185,213,233,.18); }
+#packages .pack-card .btn { background:rgba(255,255,255,.38); border-color:rgba(125,166,195,.45); box-shadow:inset 0 1px 0 rgba(255,255,255,.65); }
+#packages .pack-grid-large .pack-card .btn { background:rgba(217,237,251,.08); border-color:rgba(195,224,244,.42); box-shadow:inset 0 1px 0 rgba(255,255,255,.12); }
+.svc-featured,.contact-path-direct,.contact-choice-direct {
+  background:rgba(25,53,76,.94); border:1px solid rgba(217,235,248,.3); border-radius:30px;
+  -webkit-backdrop-filter:var(--glass-blur); backdrop-filter:var(--glass-blur);
+  box-shadow:0 24px 50px -35px rgba(25,53,76,.5),inset 0 1px 0 rgba(255,255,255,.16);
+}
+.svc-f-price { background:rgba(185,215,236,.07); border-color:rgba(214,235,250,.16); }
+#how {
+  margin:12px; border-radius:38px; border:1px solid rgba(219,237,250,.24);
+  background:radial-gradient(ellipse at 100% 0,rgba(103,156,196,.16),transparent 60%),#19354c;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
+#guarantees { background:rgba(216,233,245,.3); border:0; border-radius:38px; margin:12px; }
+.guar-item { border-top:1px solid var(--glass-edge); }
+.faq-item { border-radius:24px; }
+.faq-item[open] { background:rgba(255,255,255,.78); border-color:rgba(135,174,203,.55); box-shadow:var(--glass-shadow); }
+.faq-item summary:hover { background:rgba(221,237,249,.4); }
+.section-cta { background:radial-gradient(ellipse at 0 70%,rgba(176,210,234,.42),transparent 65%),rgba(222,237,247,.7); border-radius:40px 40px 0 0; }
+.contact-choice { border-radius:26px; }
+.contact-choice-direct { border-radius:26px; }
+.contact-path-direct { border-radius:32px; }
+.lead-form { border-radius:30px; }
+.lead-form input,.lead-form textarea {
+  background:rgba(255,255,255,.7); border:1px solid rgba(123,158,185,.34); border-radius:18px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+}
+.lead-form input:focus,.lead-form textarea:focus { border-color:#4b7491; background:rgba(255,255,255,.94); box-shadow:0 0 0 4px rgba(169,202,226,.4); }
+.calc-gift,.tag { border-radius:999px; }
+.site-footer { background:rgba(229,240,248,.75); border-top:1px solid rgba(255,255,255,.8); }
+@media(hover:hover) and (pointer:fine) {
+  #packages .pack-grid > .pack-card:hover,#packages .pack-grid > .pack-card:focus-within { background:rgba(213,232,246,.7); }
+  #packages .pack-grid > .pack-featured:hover,#packages .pack-grid > .pack-featured:focus-within { background:rgba(163,202,230,.68); }
+  #packages .pack-grid-large > .pack-card:hover,#packages .pack-grid-large > .pack-card:focus-within { background:rgba(191,221,242,.07); }
+  #packages .pack-card:hover .btn,#packages .pack-card:focus-within .btn { background:#346d9e; border-color:#346d9e; color:#fff; }
+  #packages .pack-grid-large .pack-card:hover .btn,#packages .pack-grid-large .pack-card:focus-within .btn { background:#bdd8eb; border-color:#bdd8eb; color:#19354c; }
+}
+@media(max-width:720px) {
+  :root { --glass-blur:blur(10px) saturate(110%); }
+  .hero { border-radius:0 0 30px 30px; }
+  .hero .order-card,.lead-form,.contact-path-direct { border-radius:26px; }
+  #packages .pack-grid { border-radius:26px; }
+  #how,#guarantees { margin:8px; border-radius:28px; }
+  .section-cta { border-radius:30px 30px 0 0; }
+  .svc-featured,.trial-offer,.contact-choice { border-radius:26px; }
+  .mobile-cta { background:rgba(45,101,148,.96); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border:1px solid rgba(235,246,255,.45); }
+}
+@supports not (backdrop-filter:blur(1px)) {
+  .hero .order-card,.trial-offer,.guar-item,.faq-item,.lead-form,.contact-choice { background:#f5f9fc; }
+  #packages .pack-grid { background:#f4f9fc; }
+  #packages .pack-grid-large,.contact-choice-direct,.contact-path-direct,.svc-featured { background:#19354c; }
+}
