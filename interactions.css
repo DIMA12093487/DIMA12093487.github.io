@@ -1,0 +1,87 @@
+/* Repustar: a focused action, not a new animated background. */
+.hero-actions .glow-ring {
+  display:inline-flex; align-items:center; justify-content:space-between; gap:22px;
+  min-height:58px; padding:8px 9px 8px 22px; border-radius:999px;
+  background:#346d9e; color:#fff;
+}
+.hero-actions .glow-ring::after { content:none; }
+.glow-disc {
+  position:relative; display:grid; place-items:center; flex:none; width:36px; height:36px;
+  border-radius:50%; background:rgba(255,255,255,.10); border:1px solid rgba(221,238,251,.25);
+}
+.glow-disc::before {
+  content:""; position:absolute; inset:-3px; border-radius:50%; padding:2px;
+  background:conic-gradient(from 0deg,transparent 12%,rgba(161,206,239,.12) 46%,#cceaff 75%,#fff 88%,transparent 100%);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude; pointer-events:none;
+  animation:glow-orbit 3.5s linear infinite; animation-play-state:paused;
+}
+.glow-ring.is-inview .glow-disc::before { animation-play-state:running; }
+.glow-ring:hover .glow-disc::before,.glow-ring:focus-visible .glow-disc::before { animation-play-state:paused; }
+.glow-disc svg { width:18px; height:18px; transition:translate .25s ease; }
+.glow-ring:hover .glow-disc svg,.glow-ring:focus-visible .glow-disc svg { translate:2px -2px; }
+@keyframes glow-orbit { to { transform:rotate(360deg); } }
+/* Compare packages as a readable ledger: all prices stay on screen. */
+#packages .pack-grid { grid-template-columns:minmax(0,1fr); gap:0; border-top:1px solid #a9c2d4; }
+#packages .pack-grid > .pack-card {
+  display:grid; grid-template-columns:minmax(0,1.6fr) minmax(80px,.6fr) minmax(110px,.75fr) minmax(145px,1fr) 52px;
+  grid-template-areas:"kicker count unit price action" "name count unit price action" "desc count unit price action";
+  gap:6px 24px; align-items:center; padding:26px 24px; border:0; border-bottom:1px solid #c4d7e5;
+  border-radius:0; box-shadow:none; transition:background .3s ease;
+}
+#packages .pack-kicker,#packages .pack-badge { grid-area:kicker; justify-self:start; min-height:0; margin:0; padding:0; font-size:11px; line-height:1.5; letter-spacing:.06em; }
+#packages .pack-badge { padding:3px 8px; font-size:10px; letter-spacing:.04em; border-radius:4px; }
+#packages .pack-card h3 { grid-area:name; font-size:22px; line-height:1.3; margin:0; text-align:left; text-wrap:pretty; }
+#packages .pack-description { grid-area:desc; margin:0; max-width:34ch; font-size:14px; line-height:1.5; text-wrap:pretty; }
+#packages .pack-count { grid-area:count; margin:0; font-size:26px; line-height:1.25; font-weight:650; }
+#packages .pack-count span { display:block; margin-top:6px; font-size:13px; font-weight:400; }
+#packages .pack-unit { grid-area:unit; margin:0; font-size:26px; line-height:1.25; font-weight:650; }
+#packages .pack-unit small { font-size:13px; font-weight:400; margin-top:6px; }
+#packages .pack-price { grid-area:price; margin:0; font-size:26px; line-height:1.25; font-weight:700; }
+#packages .pack-price small { font-size:13px; font-weight:400; margin-top:6px; }
+#packages .pack-card .btn {
+  grid-area:action; display:grid; place-items:center; align-self:center; justify-self:end;
+  width:52px; height:52px; min-height:52px; margin:0; padding:0; font-size:0;
+  border:1px solid #9bbdd4; border-radius:50%; color:#315b7a; background:transparent;
+  transition:background .3s ease,color .3s ease,border-color .3s ease;
+}
+#packages .pack-card .btn::after { content:"↗"; display:block; font:400 25px/1 var(--font); transform:translate(0,0); transition:transform .3s ease; }
+#packages .pack-card .btn:hover { transform:none; box-shadow:none; }
+#packages .pack-large { border:0; margin-top:0; }
+#packages .pack-large-title { padding:38px 0 22px; font-size:18px; }
+#packages .pack-grid-large > .pack-card { background:#19354c; border-bottom-color:#42637c; }
+#packages .pack-grid-large { border-top-color:#42637c; }
+#packages .pack-grid-large .pack-card .btn { background:transparent; border-color:#63879f; color:#bdd8eb; }
+#packages .pack-grid-large .pack-description,#packages .pack-grid-large .pack-count span { color:#d4e3ee; }
+#packages .pack-featured { background:#d5e7f3; }
+@media(hover:hover) and (pointer:fine) {
+  #packages .pack-grid > .pack-card:hover,#packages .pack-grid > .pack-card:focus-within { background:#e6f0f7; }
+  #packages .pack-grid > .pack-featured:hover,#packages .pack-grid > .pack-featured:focus-within { background:#c6dfef; }
+  #packages .pack-grid-large > .pack-card:hover,#packages .pack-grid-large > .pack-card:focus-within { background:#24465e; }
+  #packages .pack-card:hover .btn,#packages .pack-card:focus-within .btn { background:#346d9e; border-color:#346d9e; color:#fff; }
+  #packages .pack-grid-large .pack-card:hover .btn,#packages .pack-grid-large .pack-card:focus-within .btn { background:#bdd8eb; border-color:#bdd8eb; color:#19354c; }
+  #packages .pack-card:hover .btn::after,#packages .pack-card:focus-within .btn::after { transform:translate(2px,-2px); }
+}
+@media(max-width:899px) {
+  #packages .pack-grid > .pack-card {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) 48px;
+    grid-template-areas:"kicker kicker action" "name name action" "desc desc desc" "count unit unit" "price price price";
+    gap:8px 16px; padding:24px 20px;
+  }
+  #packages .pack-card h3 { font-size:23px; }
+  #packages .pack-description { max-width:50ch; margin:0 0 10px; font-size:14px; }
+  #packages .pack-count,#packages .pack-unit { font-size:25px; padding:4px 0; }
+  #packages .pack-price { display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 10px; font-size:27px; border-top:1px solid #c4d7e5; padding-top:16px; margin-top:10px; }
+  #packages .pack-price small { margin:0; }
+  #packages .pack-grid-large .pack-price { border-top-color:#42637c; }
+  #packages .pack-card .btn { width:48px; height:48px; min-height:48px; }
+}
+@media(max-width:360px) {
+  #packages .pack-grid > .pack-card { padding:22px 16px; gap:8px 12px; }
+  #packages .pack-card h3 { font-size:21px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .glow-disc::before { animation:none; }
+  .glow-disc svg,#packages .pack-card,#packages .pack-card .btn,#packages .pack-card .btn::after { transition:none; }
+}
