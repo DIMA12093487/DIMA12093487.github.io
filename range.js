@@ -1,0 +1,38 @@
+(() => {
+  'use strict';
+  const input = document.getElementById('cnt');
+  if (!input) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'glass-range';
+  const tip = document.createElement('output');
+  tip.id = 'rangeTip';
+  tip.className = 'range-tip';
+  tip.setAttribute('aria-hidden', 'true');
+  input.before(wrap);
+  wrap.append(tip, input);
+  const nouns = { one:'отзыв', few:'отзыва', many:'отзывов', other:'отзыва' };
+  const plural = new Intl.PluralRules('ru');
+  const render = () => {
+    const value = Number(input.value);
+    const ratio = Math.max(0, Math.min(1, (value - Number(input.min)) / (Number(input.max) - Number(input.min))));
+    const unit = nouns[plural.select(value)];
+    tip.textContent = value.toLocaleString('ru-RU');
+    input.setAttribute('aria-valuetext', `${value.toLocaleString('ru-RU')} ${unit}`);
+    const label = document.querySelector('.calc-count .calc-unit');
+    if (label) label.textContent = unit;
+    input.style.setProperty('--range-progress', `${ratio * 100}%`);
+    const width = input.clientWidth;
+    if (!width) return;
+    const thumbCenter = 18 + ratio * Math.max(0, width - 36);
+    const halfTip = tip.offsetWidth / 2;
+    const center = Math.max(halfTip, Math.min(width - halfTip, thumbCenter));
+    tip.style.left = `${center}px`;
+    tip.style.setProperty('--tip-pointer', `${thumbCenter - center}px`);
+  };
+  input.addEventListener('input', render);
+  input.addEventListener('change', render);
+  if ('ResizeObserver' in window) new ResizeObserver(render).observe(input);
+  else window.addEventListener('resize', render, { passive:true });
+  document.fonts?.ready.then(render);
+  render();
+})();
