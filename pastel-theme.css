@@ -958,4 +958,11 @@ body{background:var(--paper);color:var(--ink)}
 /* Scoped alignment fixes for hero actions and the city control. */
 .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center}
 .city-pin-picker .city-chevron{display:block;width:12px;height:12px;flex:none}
-
+/* A single factual order summary replaces fabricated client results. */
+.hero .order-visual{grid-column:2;grid-row:1;align-self:center;min-width:0;padding:0;animation:none}
+.hero .order-card{width:100%;max-width:380px;padding:28px;border:1px solid #c4d7e5;background:#f5f9fc;box-shadow:none;animation:none;transform:none}
+.hero .order-card h2{font-family:var(--font);font-size:24px;line-height:1.3;letter-spacing:-.03em}
+.hero .order-card dt{font-size:13px}
+.hero .order-card dd{font-size:16px;line-height:1.5}
+@media(max-width:920px){.hero .order-visual{grid-column:1;grid-row:2;justify-content:flex-start}.hero .order-card{max-width:none}.hero .order-card dl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.hero .order-card{padding:22px}.hero .order-card dl{grid-template-columns:minmax(0,1fr)}.hero .order-card dl>div{display:block}.hero .order-card dd{text-align:left}}
