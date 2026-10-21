@@ -5,6 +5,12 @@
   --glass-shadow:0 20px 50px -34px rgba(44,88,124,.38),inset 0 1px 0 rgba(255,255,255,.9);
   --glass-blur:blur(18px) saturate(118%);
 }
+/* Restored why section: same rounded dark-blue surface as the process. */
+.reputation-section {
+  margin:12px; border-radius:38px; border:1px solid rgba(219,237,250,.24);
+  background:radial-gradient(ellipse at 100% 0,rgba(103,156,196,.16),transparent 60%),#19354c;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
 body {
   background-color:#eaf2f8;
   background-image:radial-gradient(ellipse 1000px 900px at 100% 1200px,rgba(182,214,237,.6),transparent 74%),radial-gradient(ellipse 900px 1500px at 0 3200px,rgba(204,225,240,.7),transparent 75%);
@@ -100,7 +106,7 @@ body {
   .hero { border-radius:0 0 30px 30px; }
   .hero .order-card,.lead-form,.contact-path-direct { border-radius:26px; }
   #packages .pack-grid { border-radius:26px; }
-  #how,#guarantees { margin:8px; border-radius:28px; }
+  #how,#guarantees,.reputation-section { margin:8px; border-radius:28px; }
   .section-cta { border-radius:30px 30px 0 0; }
   .svc-featured,.trial-offer,.contact-choice { border-radius:26px; }
   .mobile-cta { background:rgba(45,101,148,.96); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border:1px solid rgba(235,246,255,.45); }
