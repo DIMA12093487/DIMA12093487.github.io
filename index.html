@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="interactions.css?v=3">
   <link rel="stylesheet" href="frost.css?v=3">
   <link rel="stylesheet" href="range.css?v=1">
+  <link rel="stylesheet" href="email-copy.css?v=1">
 
   <script type="application/ld+json">
   {
@@ -42,7 +43,7 @@
     <nav class="quick-contacts" aria-label="Быстрые контакты">
           <a class="contact-channel channel-tg" href="https://t.me/repustar" target="_blank" rel="noopener" title="Написать в Telegram" aria-label="Написать в Telegram"><img src="assets/contact-telegram.svg" alt="" aria-hidden="true" width="24" height="24"></a>
           <a class="contact-channel channel-wa" href="https://wa.me/79951540146" target="_blank" rel="noopener" title="Написать в WhatsApp" aria-label="Написать в WhatsApp"><img src="assets/contact-whatsapp.svg" alt="" aria-hidden="true" width="24" height="24"></a>
-          <a class="contact-channel channel-mail" href="mailto:repustar@yandex.com" title="Написать на почту" aria-label="Написать на почту"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></a></nav>
+          <button type="button" class="contact-channel channel-mail" data-copy-email="repustar@yandex.com" title="Скопировать почту" aria-label="Скопировать почту: repustar@yandex.com"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></button></nav>
     <label class="city-picker city-pin-picker">
       <svg class="city-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg>
       <span class="city-full" aria-hidden="true">Москва</span><span class="city-short" aria-hidden="true">Москва</span><svg class="city-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -350,9 +351,9 @@
         <div class="contact-grid contact-channels">
           <a class="contact-channel channel-tg" href="https://t.me/repustar" target="_blank" rel="noopener" title="Написать в Telegram" aria-label="Написать в Telegram"><img src="assets/contact-telegram.svg" alt="" aria-hidden="true" width="24" height="24"></a>
           <a class="contact-channel channel-wa" href="https://wa.me/79951540146" target="_blank" rel="noopener" title="Написать в WhatsApp" aria-label="Написать в WhatsApp"><img src="assets/contact-whatsapp.svg" alt="" aria-hidden="true" width="24" height="24"></a>
-          <a class="contact-channel channel-mail" href="mailto:repustar@yandex.com" title="Написать на почту" aria-label="Написать на почту"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></a>
+          <button type="button" class="contact-channel channel-mail" data-copy-email="repustar@yandex.com" title="Скопировать почту" aria-label="Скопировать почту: repustar@yandex.com"><img src="assets/contact-mail.svg" alt="" aria-hidden="true" width="24" height="24"></button>
         </div>
-        <p class="contact-mail">Или на&nbsp;<a href="mailto:repustar@yandex.com">repustar@yandex.com</a></p>
+        <p class="contact-mail">Или на&nbsp;<button type="button" class="email-copy-text" data-copy-email="repustar@yandex.com" title="Скопировать почту">repustar@yandex.com</button></p>
         <p class="contact-mail">Рабочий номер:&nbsp;<a href="tel:+79951540146">+7&nbsp;995&nbsp;154-01-46</a></p>
       </div>
       <p class="cta-hint">отвечаем в течение часа, 10:00–22:00 мск · Telegram:&nbsp;@repustar</p>
@@ -367,13 +368,14 @@
   <div class="wrap footer-inner">
     <div class="logo logo-footer"><span class="logo-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><rect width="1024" height="1024" fill="#548FE0"/><polygon points="512.0000,187.0000 534.4514,256.0983 607.1057,256.0983 548.3271,298.8034 570.7785,367.9017 512.0000,325.1966 453.2215,367.9017 475.6729,298.8034 416.8943,256.0983 489.5486,256.0983" fill="#FFFFFF"/><polygon points="725.9877,342.4712 748.4391,411.5695 821.0934,411.5695 762.3148,454.2746 784.7662,523.3729 725.9877,480.6678 667.2092,523.3729 689.6606,454.2746 630.8821,411.5695 703.5363,411.5695" fill="#FFFFFF"/><polygon points="644.2517,594.0288 666.7031,663.1271 739.3573,663.1271 680.5788,705.8322 703.0302,774.9305 644.2517,732.2254 585.4732,774.9305 607.9246,705.8322 549.1460,663.1271 621.8003,663.1271" fill="#FFFFFF"/><polygon points="379.7483,594.0288 402.1997,663.1271 474.8540,663.1271 416.0754,705.8322 438.5268,774.9305 379.7483,732.2254 320.9698,774.9305 343.4212,705.8322 284.6427,663.1271 357.2969,663.1271" fill="#FFFFFF"/><polygon points="298.0123,342.4712 320.4637,411.5695 393.1179,411.5695 334.3394,454.2746 356.7908,523.3729 298.0123,480.6678 239.2338,523.3729 261.6852,454.2746 202.9066,411.5695 275.5609,411.5695" fill="#FFFFFF"/></svg></span>РепуСтар</div>
     <p>Отзывы на Яндекс Картах для бизнеса</p>
-    <p>@repustar&nbsp;·&nbsp;repustar@yandex.com</p>
+    <p>@repustar&nbsp;·&nbsp;<button type="button" class="email-copy-text" data-copy-email="repustar@yandex.com" title="Скопировать почту">repustar@yandex.com</button></p>
     <p><a href="tel:+79951540146">+7&nbsp;995&nbsp;154-01-46</a></p>
     <p class="footer-muted">© 2026&nbsp;РепуСтар</p>
   </div>
 </footer>
 
 <script src="script.js?v=9"></script>
+<script src="email-copy.js?v=1"></script>
 <script src="motion.js?v=2"></script>
 <script src="typography.js?v=2"></script>
 <script src="location.js?v=2"></script>

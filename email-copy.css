@@ -1,0 +1,7 @@
+/* Retain the existing contact layout and colors. */
+button[data-copy-email]{cursor:pointer;font:inherit}
+.email-copy-text{appearance:none;display:inline;padding:0;border:0;border-radius:0;background:transparent;color:inherit;line-height:inherit;text-align:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.email-copy-text:hover{opacity:.8}
+button[data-copy-email]:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.email-copy-status{position:fixed;z-index:9999;left:50%;bottom:24px;transform:translateX(-50%);max-width:calc(100vw - 32px);padding:13px 19px;border:1px solid #507087;border-radius:12px;background:#24465e;color:#fff;font:500 15px/1.4 Onest,"Segoe UI",sans-serif;text-align:center;box-shadow:0 8px 24px #19354c25;overflow-wrap:anywhere}
+.email-copy-status[hidden]{display:none}
