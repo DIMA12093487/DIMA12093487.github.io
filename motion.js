@@ -35,7 +35,7 @@
       // Never conceal content already visible before the observer is ready.
       if (element.getBoundingClientRect().top <= window.innerHeight * 0.88) return;
       const order = Array.prototype.indexOf.call(element.parentElement.children, element) % 4;
-      element.style.setProperty('--stagger', `${order * 65}ms`);
+      element.style.setProperty('--stagger', `${order * (element.matches('.step') ? 130 : 65)}ms`);
       element.classList.add('reveal');
       observer.observe(element);
     });

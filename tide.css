@@ -2,7 +2,7 @@
 .tide-process { position:relative; margin-top:42px; }
 .tide-route { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
 .tide-route-track { fill:none; stroke:#59778f; stroke-width:1.5; stroke-dasharray:4 7; }
-.tide-route-progress { fill:none; stroke:#bdd8eb; stroke-width:2; stroke-linecap:round; }
+.tide-route-progress { fill:none; stroke:#bdd8eb; stroke-width:2; stroke-linecap:round; transition:stroke-dashoffset .6s ease; }
 #how .tide-process .steps { position:relative; gap:28px; }
 #how .tide-process .step {
   position:relative; display:grid; grid-template-columns:52px minmax(0,1fr); gap:24px;
@@ -12,7 +12,7 @@
 #how .tide-process .step-num {
   position:relative; inset:auto; width:52px; height:52px; margin:0;
   background:#19354c; border:1px solid #59778f; color:#a8c0d2;
-  transition:background .3s ease,border-color .3s ease,color .3s ease;
+  transition:background .6s ease,border-color .6s ease,color .6s ease;
 }
 #how .tide-process .step.tide-reached .step-num { background:#315b7a; border-color:#bdd8eb; color:#fff; }
 #how .tide-process .step h3 { display:block; padding:0; min-height:0; margin:9px 0 10px; }
@@ -34,5 +34,5 @@
   #how .tide-process .step p { font-size:15px; padding-bottom:16px; }
 }
 @media(prefers-reduced-motion:reduce) {
-  #how .tide-process .step-num { transition:none; }
+  .tide-route-progress,#how .tide-process .step-num { transition:none; }
 }

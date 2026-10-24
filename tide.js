@@ -26,6 +26,7 @@
     processFrame = 0;
     const box = process.getBoundingClientRect();
     const p = reduced.matches ? 1 : Math.max(0, Math.min(1, (innerHeight * .78 - box.top) / Math.max(1, box.height * .88)));
+    progress.style.transitionDuration = reduced.matches ? '0s' : '.6s';
     progress.setAttribute('stroke-dashoffset', String(1 - p));
     stages.forEach((stage, i) => stage.classList.toggle('tide-reached', p >= i / (stages.length - 1)));
   };

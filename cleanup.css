@@ -1,0 +1,27 @@
+/* Scoped editorial cleanup; preserve the existing theme and hero headline. */
+.section > .wrap > h2,
+.reputation-intro h2 { text-align:center; margin-left:auto; margin-right:auto; }
+.reputation-layout { grid-template-columns:minmax(0,1fr); gap:32px; }
+.reputation-intro h2 { max-width:100%; margin-bottom:0; }
+.reputation-list { width:100%; max-width:820px; margin:0 auto; }
+/* Removing the order card must not leave an empty grid column. */
+.hero-grid { grid-template-columns:minmax(0,1fr); }
+.hero-copy { max-width:690px; }
+.hero-actions { margin-top:28px; }
+.contact-choice { grid-template-columns:minmax(0,1fr) auto; }
+.form-note:empty { margin:0; min-height:0; }
+/* Step numbers remain 1..5; only their active state changes more slowly. */
+#how .step.reveal { transition-duration:1.44s; }
+.blog-main { min-height:calc(100svh - 320px); }
+.blog-section { padding:80px 0 96px; }
+.blog-section h1 { text-align:center; font-size:clamp(34px,4.7vw,62px); margin:0 auto 32px; }
+.blog-empty { text-align:center; margin:0; color:var(--muted,#4d5b65); font-size:20px; }
+.blog-page .site-header .nav [aria-current="page"] { text-decoration:underline; text-underline-offset:6px; }
+@media(max-width:720px) {
+  .reputation-layout { gap:28px; }
+  .blog-section { padding:56px 0 72px; }
+  .blog-empty { font-size:18px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #how .step.reveal { transition:none; }
+}
