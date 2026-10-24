@@ -23,7 +23,8 @@
   <link rel="stylesheet" href="range.css?v=1">
   <link rel="stylesheet" href="email-copy.css?v=1">
   <link rel="stylesheet" href="cleanup.css?v=2">
-  <link rel="stylesheet" href="hero-mint.css?v=1">
+  <link rel="stylesheet" href="hero-mint.css?v=2">
+  <link rel="stylesheet" href="service-controls.css?v=1">
 
   <script type="application/ld+json">
   {
@@ -86,9 +87,8 @@
         </div>
 
       </div>
-      <aside class="hero-mint-visual" aria-label="Пример карточки кафе Мята с высоким рейтингом">
+      <aside class="hero-mint-visual" aria-label="Иллюстрация карточки кафе Мята с рейтингом">
         <article class="rating-card mint-card">
-          <span class="mint-example">Пример карточки</span>
           <div class="rc-head">
             <div class="rc-avatar" aria-hidden="true">М</div>
             <div><div class="rc-name">Кафе «Мята»</div><div class="rc-cat">Кафе</div></div>
@@ -125,17 +125,17 @@
       <div class="reputation-list">
         <article>
 
-          <span class="reputation-num">01 / ДОВЕРИЕ</span>
+          <span class="reputation-num">ДОВЕРИЕ</span>
           <h3>Меньше сомнений перед&nbsp;обращением</h3>
           <p>Свежие положительные отзывы помогают человеку понять, чего ждать от компании - ещё до звонка или&nbsp;визита.</p>
         </article>
         <article>
-          <span class="reputation-num">02 / ВЫБОР</span>
+          <span class="reputation-num">ВЫБОР</span>
           <h3>Больше причин выбрать&nbsp;вас</h3>
           <p>Когда рядом несколько похожих предложений, хорошая репутация может стать аргументом в вашу пользу и помочь получить больше&nbsp;обращений.</p>
         </article>
         <article>
-          <span class="reputation-num">03 / РАБОТА С НЕГАТИВОМ</span>
+          <span class="reputation-num">РАБОТА С НЕГАТИВОМ</span>
           <h3>Один плохой отзыв - не вся&nbsp;история</h3>
           <p>Свежая обратная связь дополняет картину, чтобы прошлые жалобы не оставались единственным впечатлением о&nbsp;бизнесе.</p>
         </article>
@@ -151,11 +151,10 @@
       <h2>Услуги</h2>
 
 
-      <div class="svc-featured">
+      <div class="svc-featured service-configurator">
         <div class="svc-f-copy">
-          <span class="tag tag-dark">Основная услуга</span>
-          <h3>Яндекс&nbsp;Карты</h3>
-
+          <span class="service-eyebrow">Основная услуга</span>
+          <h3>Яндекс<br>Карты</h3>
           <ul class="svc-f-list">
             <li>план публикаций под вашу&nbsp;карточку</li>
             <li>ссылки на опубликованные&nbsp;отзывы</li>
@@ -164,21 +163,29 @@
         </div>
         <div class="svc-f-price">
           <div class="calc calc-embed">
-            <div class="calc-top">
-              <div class="calc-count">
-                <span class="calc-num" id="cntVal">3</span>
-                <span class="calc-unit">отзыва</span>
+            <div class="quantity-heading">
+              <label for="serviceQuantity">Количество отзывов</label>
+              <span id="quantityHelp">от 3 до 1 000</span>
+            </div>
+            <div class="quantity-row">
+              <div class="quantity-control">
+                <button type="button" data-quantity-step="-1" aria-label="Уменьшить количество">−</button>
+                <input id="serviceQuantity" type="number" min="3" max="1000" step="1" value="3" inputmode="numeric" aria-describedby="quantityHelp">
+                <button type="button" data-quantity-step="1" aria-label="Увеличить количество">+</button>
               </div>
+              <div class="calc-count"><span id="cntVal" hidden>3</span><span class="calc-unit">отзыва</span></div>
+            </div>
+            <input type="range" id="cnt" class="calc-range" min="3" max="1000" value="3" step="1" aria-label="Количество отзывов">
+            <div class="calc-scale" aria-hidden="true"><span>3</span><span>500</span><span>1 000</span></div>
+            <div class="service-summary" aria-live="polite" aria-atomic="true">
+              <span class="service-total-label">Стоимость</span>
               <div class="calc-total">
                 <span class="calc-total-num" id="totalVal">2 850 ₽</span>
                 <span class="calc-total-unit" id="unitVal">по 950 ₽ за отзыв</span>
               </div>
               <div class="calc-gift" id="giftVal">Скидка за объём: от 50 отзывов</div>
             </div>
-            <input type="range" id="cnt" class="calc-range" min="3" max="1000" value="3" step="1" aria-label="Количество отзывов">
-            <div class="calc-scale"><span>3</span><span>250</span><span>500</span><span>750</span><span>1 000</span></div>
             <a class="btn btn-accent btn-block" href="#leadForm" data-order-calculator>Обсудить этот объём</a>
-            <p class="calc-hint">от 3 отзывов · скидка зависит от&nbsp;объёма</p>
           </div>
         </div>
       </div>
@@ -187,7 +194,7 @@
     </div>
   </section>
 
-  <section class="section package-section" id="packages"><div class="wrap"><p class="eyebrow">Пакеты отзывов</p><h2>Стоимость отзывов</h2><p class="section-sub">Цена за отзыв — ниже при большем объёме. Отчёт входит в стоимость.</p><div class="pack-grid"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Стартовый</h3><p class="pack-unit">950 ₽ <small>за отзыв</small></p><p class="pack-count">10 <span>отзывов</span></p><p class="pack-description">Для небольшого заказа</p><p class="pack-price">9 500 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="10" data-package-name="Стартовый">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Базовый</h3><p class="pack-unit">900 ₽ <small>за отзыв</small></p><p class="pack-count">50 <span>отзывов</span></p><p class="pack-description">Для регулярной работы</p><p class="pack-price">45 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="50" data-package-name="Базовый">Выбрать пакет</a></article><article class="pack-card pack-featured"><span class="pack-badge">Рекомендуем</span><h3>Рост</h3><p class="pack-unit">850 ₽ <small>за отзыв</small></p><p class="pack-count">100 <span>отзывов</span></p><p class="pack-description">На 5 000 ₽ дешевле двух базовых пакетов</p><p class="pack-price">85 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-accent btn-block" data-package-count="100" data-package-name="Рост">Выбрать пакет</a></article></div><div class="pack-large" id="largePackages"><h3 class="pack-large-title">Нужно больше? Пакеты на 200–1 000 отзывов</h3><div class="pack-grid pack-grid-large"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Масштаб</h3><p class="pack-unit">800 ₽ <small>за отзыв</small></p><p class="pack-count">200 <span>отзывов</span></p><p class="pack-description">На 10 000 ₽ дешевле двух пакетов «рост»</p><p class="pack-price">160 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="200" data-package-name="Масштаб">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Сеть</h3><p class="pack-unit">750 ₽ <small>за отзыв</small></p><p class="pack-count">300 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">225 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="300" data-package-name="Сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Большая сеть</h3><p class="pack-unit">700 ₽ <small>за отзыв</small></p><p class="pack-count">500 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">350 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="500" data-package-name="Большая сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Индивидуальный</h3><p class="pack-unit">650 ₽ <small>за отзыв</small></p><p class="pack-count">1000 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">650 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="1000" data-package-name="Индивидуальный">Выбрать пакет</a></article></div></div><div class="trial-offer"><div><p class="eyebrow">Попробуйте перед заказом</p><h3>1 отзыв бесплатно</h3><p>Для новых клиентов — один раз на компанию, без обязательства покупать пакет. Сначала посмотрим карточку и согласуем пробное размещение.</p></div><a class="btn btn-accent" href="#leadForm" data-trial>Получить пробный отзыв</a></div></div></section>
+  <section class="section package-section" id="packages"><div class="wrap"><h2>Пакеты отзывов</h2><div class="pack-grid"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Стартовый</h3><p class="pack-unit">950 ₽ <small>за отзыв</small></p><p class="pack-count">10 <span>отзывов</span></p><p class="pack-description">Для небольшого заказа</p><p class="pack-price">9 500 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="10" data-package-name="Стартовый">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Базовый</h3><p class="pack-unit">900 ₽ <small>за отзыв</small></p><p class="pack-count">50 <span>отзывов</span></p><p class="pack-description">Для регулярной работы</p><p class="pack-price">45 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="50" data-package-name="Базовый">Выбрать пакет</a></article><article class="pack-card pack-featured"><span class="pack-badge">Рекомендуем</span><h3>Рост</h3><p class="pack-unit">850 ₽ <small>за отзыв</small></p><p class="pack-count">100 <span>отзывов</span></p><p class="pack-description">На 5 000 ₽ дешевле двух базовых пакетов</p><p class="pack-price">85 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-accent btn-block" data-package-count="100" data-package-name="Рост">Выбрать пакет</a></article></div><div class="pack-large" id="largePackages"><h3 class="pack-large-title">Нужно больше? Пакеты на 200–1 000 отзывов</h3><div class="pack-grid pack-grid-large"><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Масштаб</h3><p class="pack-unit">800 ₽ <small>за отзыв</small></p><p class="pack-count">200 <span>отзывов</span></p><p class="pack-description">На 10 000 ₽ дешевле двух пакетов «рост»</p><p class="pack-price">160 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="200" data-package-name="Масштаб">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Сеть</h3><p class="pack-unit">750 ₽ <small>за отзыв</small></p><p class="pack-count">300 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">225 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="300" data-package-name="Сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Большая сеть</h3><p class="pack-unit">700 ₽ <small>за отзыв</small></p><p class="pack-count">500 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">350 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="500" data-package-name="Большая сеть">Выбрать пакет</a></article><article class="pack-card"><span class="pack-kicker">Готовый пакет</span><h3>Индивидуальный</h3><p class="pack-unit">650 ₽ <small>за отзыв</small></p><p class="pack-count">1000 <span>отзывов</span></p><p class="pack-description">Для крупных заказов и нескольких точек</p><p class="pack-price">650 000 ₽ <small>за весь пакет</small></p><a href="#leadForm" class="btn btn-ghost btn-block" data-package-count="1000" data-package-name="Индивидуальный">Выбрать пакет</a></article></div></div><div class="trial-offer"><div><p class="eyebrow">Попробуйте перед заказом</p><h3>1 отзыв бесплатно</h3><p>Для новых клиентов — один раз на компанию, без обязательства покупать пакет. Сначала посмотрим карточку и согласуем пробное размещение.</p></div><a class="btn btn-accent" href="#leadForm" data-trial>Получить пробный отзыв</a></div></div></section>
 
 
 
@@ -386,6 +393,7 @@
 <script src="tide.js?v=3"></script>
 <script src="interactions.js?v=2"></script>
 <script src="range.js?v=1"></script>
+<script src="service-controls.js?v=1"></script>
 
 
 

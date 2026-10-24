@@ -4,16 +4,15 @@
 .hero .hero-facts { grid-column:1/-1; grid-row:2; margin-top:0; }
 .hero-mint-visual { display:grid; place-items:center; position:relative; grid-column:2; grid-row:1; min-width:0; min-height:310px; padding:16px 6px 36px; isolation:isolate; }
 .hero-mint-visual::after { content:""; position:absolute; z-index:-1; bottom:12px; left:13%; width:74%; height:20px; border-radius:50%; background:rgba(33,74,87,.13); filter:blur(9px); }
-.hero .mint-card { width:min(100%,340px); padding:26px; border:1px solid rgba(255,255,255,.95); border-radius:28px; background:#fff; box-shadow:0 30px 60px -28px rgba(25,66,87,.34),inset 0 0 0 1px rgba(125,164,165,.14); transform:rotate(-2deg); animation:mint-levitate 6.8s ease-in-out infinite; }
-.mint-example { display:block; color:#596e77; font-size:12px; font-weight:500; margin:0 0 22px; }
+.hero .mint-card { width:min(100%,340px); padding:26px; border:1px solid rgba(255,255,255,.95); border-radius:28px; background:#346cb9; color:#fff; box-shadow:0 30px 60px -28px rgba(25,66,87,.34),inset 0 0 0 1px rgba(125,164,165,.14); transform:rotate(-2deg); animation:mint-levitate 6.8s ease-in-out infinite; }
 .mint-card .rc-head { margin-bottom:24px; gap:14px; }
-.mint-card .rc-avatar { width:48px; height:48px; flex:none; border-radius:15px; background:#e0eeE8; color:#3b7063; font-size:23px; }
-.mint-card .rc-name { font-size:22px; font-weight:700; letter-spacing:-.4px; }
-.mint-card .rc-cat { font-size:14px; margin-top:3px; }
-.mint-card .rc-score { border-color:#e2ebef; padding:18px 0 12px; column-gap:16px; }
-.mint-card .rc-num { font-size:64px; line-height:1.15; letter-spacing:-3px; }
-.mint-card .rc-stars { color:#ac7d1c; font-size:20px; letter-spacing:2px; white-space:nowrap; }
-.mint-card .rc-count { font-size:13px; margin-top:4px; }
+.mint-card .rc-avatar { width:48px; height:48px; flex:none; border-radius:15px; background:#e2edff; color:#28568d; font-size:23px; }
+.mint-card .rc-name { color:#fff; font-size:22px; font-weight:700; letter-spacing:-.4px; }
+.mint-card .rc-cat { color:#fff; font-size:14px; margin-top:3px; }
+.mint-card .rc-score { border-color:rgba(255,255,255,.35); padding:18px 0 12px; column-gap:16px; }
+.mint-card .rc-num { color:#fff; font-size:64px; line-height:1.15; letter-spacing:-3px; }
+.mint-card .rc-stars { color:#ffdf9e; font-size:20px; letter-spacing:2px; white-space:nowrap; }
+.mint-card .rc-count { color:#fff; font-size:13px; margin-top:4px; }
 @keyframes mint-levitate {
   0%,100% { transform:translateY(5px) rotate(-2deg); }
   50% { transform:translateY(-9px) rotate(-.5deg); }
@@ -29,8 +28,8 @@
 }
 @media(max-width:480px) {
  .hero .mint-card { padding:22px; }
- .mint-card .rc-name { font-size:20px; }
- .mint-card .rc-num { font-size:56px; }
+ .mint-card .rc-name { color:#fff; font-size:20px; }
+ .mint-card .rc-num { color:#fff; font-size:56px; }
  .mint-card .rc-stars { font-size:17px; letter-spacing:1px; }
  .mint-card .rc-score { column-gap:12px; }
 }

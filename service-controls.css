@@ -1,0 +1,75 @@
+/* A light service constructor. All controls remain native and keyboard usable. */
+#services { padding-top:64px; }
+#services > .wrap > h2 { margin-bottom:30px; }
+#services .service-configurator { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:0; background:#edf4fc; color:#19354c; border:1px solid #ccdbed; border-radius:32px; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; overflow:hidden; margin:0; }
+#services .svc-f-copy { padding:44px; display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+#services .service-eyebrow { color:#46658b; font-size:12px; line-height:1.5; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+#services .svc-f-copy h3 { color:#224d80; font-size:clamp(38px,4.2vw,60px); line-height:1.13; letter-spacing:-.055em; margin:24px 0 42px; text-wrap:initial; }
+#services .svc-f-list { width:100%; list-style:none; margin: auto 0 0; padding:0; display:block; }
+#services .svc-f-list li { color:#294864; font-size:16px; line-height:1.5; padding:17px 0; border-top:1px solid #c9d9ec; }
+#services .svc-f-list li:last-child { padding-bottom:0; }
+#services .svc-f-list li::before { content:none; }
+#services .svc-f-price { min-width:0; background:#fff; border:0; border-left:1px solid #ccdbed; padding:40px; display:block; }
+#services .calc-embed { display:flex; flex-direction:column; gap:0; padding:0; background:none; border:0; border-radius:0; box-shadow:none; }
+#services .quantity-heading { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-bottom:16px; }
+#services .quantity-heading label { font-size:16px; font-weight:600; color:#19354c; }
+#services #quantityHelp { color:#52677e; font-size:13px; }
+#services .quantity-row { display:flex; align-items:center; flex-wrap:wrap; gap:12px 16px; }
+#services .quantity-control { display:flex; align-items:center; border:1px solid #b4c9e4; border-radius:14px; background:#f7faff; padding:3px; }
+#services .quantity-control button { display:grid; place-items:center; width:44px; height:48px; padding:0; border:0; border-radius:10px; background:#e7f0fc; color:#275d9e; font:500 25px/1 var(--font); cursor:pointer; }
+#services .quantity-control button:hover { background:#d8e8fc; }
+#services .quantity-control button:disabled { color:#7f92a9; cursor:default; background:transparent; }
+#services #serviceQuantity { appearance:textfield; -moz-appearance:textfield; width:100px; min-width:0; height:52px; border:0; border-radius:5px; padding:4px; margin:0; color:#19354c; background:transparent; text-align:center; font:700 29px/1 var(--font); font-variant-numeric:tabular-nums; box-shadow:none; }
+#services #serviceQuantity::-webkit-inner-spin-button,#services #serviceQuantity::-webkit-outer-spin-button { appearance:none; margin:0; }
+#services .calc-count { margin:0; gap:0; }
+#services .calc-unit { color:#52677e; font-size:16px; }
+#services .glass-range { padding:0; margin:20px 0 0; }
+#services .range-tip { display:none; }
+#services #cnt { height:44px; width:100%; margin:0; border:0; background:transparent; box-shadow:none; }
+#services #cnt::-webkit-slider-runnable-track { height:8px; border:0; border-radius:8px; background:linear-gradient(to right,#447fc9 0%,#447fc9 var(--range-progress,0%),#dce7f4 var(--range-progress,0%),#dce7f4 100%); box-shadow:none; }
+#services #cnt::-webkit-slider-thumb { appearance:none; width:44px; height:44px; margin-top:-18px; border:7px solid #fff; border-radius:50%; background:#346cb9; box-shadow:0 0 0 1px #b4cae6,0 3px 8px #274c7726; }
+#services #cnt::-moz-range-track { height:8px; border:0; border-radius:8px; background:linear-gradient(to right,#447fc9 0%,#447fc9 var(--range-progress,0%),#dce7f4 var(--range-progress,0%),#dce7f4 100%); box-shadow:none; }
+#services #cnt::-moz-range-thumb { box-sizing:border-box; width:44px; height:44px; border:7px solid #fff; border-radius:50%; background:#346cb9; box-shadow:0 0 0 1px #b4cae6; }
+#services .calc-scale { margin:4px 0 26px; color:#52677e; font-size:12px; }
+#services .service-summary { border-top:1px solid #dce6f1; padding-top:22px; margin-bottom:24px; }
+#services .service-total-label { display:block; color:#52677e; font-size:14px; margin-bottom:8px; }
+#services .calc-total { text-align:left; }
+#services .calc-total-num { color:#224d80; font-size:clamp(28px,2.8vw,40px); line-height:1.25; letter-spacing:-.055em; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+#services .calc-total-unit { display:block; color:#52677e; font-size:14px; margin-top:7px; }
+#services .calc-gift { display:block; padding:0; margin:14px 0 0; border:0; background:transparent; color:#456789; font-size:13px; line-height:1.6; text-align:left; text-wrap:pretty; }
+#services .svc-f-price .btn { margin:0; min-height:52px; background:#346cb9; color:#fff; border:1px solid #346cb9; font-size:15px; }
+#services .svc-f-price .btn:hover { background:#295d9f; }
+#services :is(button,input,a):focus-visible { outline:3px solid #215da5; outline-offset:4px; }
+@media(max-width:1100px) {
+ #services .svc-f-copy,#services .svc-f-price { padding:32px; }
+}
+@media(max-width:920px) {
+ #services .service-configurator { grid-template-columns:minmax(0,1fr); }
+ #services .svc-f-copy { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:32px; }
+ #services .service-eyebrow { grid-column:1/-1; }
+ #services .svc-f-copy h3 { margin:20px 0 0; font-size:46px; }
+ #services .svc-f-list { margin-top:20px; }
+ #services .svc-f-price { border-left:0; border-top:1px solid #ccdbed; }
+}
+@media(max-width:720px) {
+ #services { padding-top:34px; }
+ #services > .wrap > h2 { margin-bottom:24px; }
+ #services .service-configurator { border-radius:24px; }
+ #services .svc-f-copy { display:block; padding:28px 22px; }
+ #services .svc-f-copy h3 { font-size:42px; margin:20px 0 26px; }
+ #services .svc-f-list { margin:0; }
+ #services .svc-f-list li { font-size:15px; padding:14px 0; }
+ #services .svc-f-price { padding:28px 22px; }
+ #services .calc-total-num { font-size:30px; }
+}
+@media(max-width:360px) {
+ #services .svc-f-copy,#services .svc-f-price { padding:24px 18px; }
+ #services .svc-f-copy h3 { font-size:36px; }
+ #services #serviceQuantity { width:80px; }
+ #services .quantity-row { gap:10px; }
+ #services .calc-unit { font-size:14px; }
+ #services .svc-f-price .btn { font-size:14px; padding-left:10px; padding-right:10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ #services *,#services *::before,#services *::after { animation:none !important; transition:none !important; }
+}
