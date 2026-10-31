@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="range.css?v=1">
   <link rel="stylesheet" href="email-copy.css?v=1">
   <link rel="stylesheet" href="cleanup.css?v=2">
-  <link rel="stylesheet" href="hero-mint.css?v=2">
+  <link rel="stylesheet" href="hero-transform.css?v=1">
   <link rel="stylesheet" href="service-controls.css?v=1">
 
   <script type="application/ld+json">
@@ -87,18 +87,38 @@
         </div>
 
       </div>
-      <aside class="hero-mint-visual" aria-label="Иллюстрация карточки кафе Мята с рейтингом">
-        <article class="rating-card mint-card">
-          <div class="rc-head">
-            <div class="rc-avatar" aria-hidden="true">М</div>
-            <div><div class="rc-name">Кафе «Мята»</div><div class="rc-cat">Кафе</div></div>
-          </div>
-          <div class="rc-score" aria-label="Рейтинг в примере: 4,9 из 5">
-            <div class="rc-num">4.9</div>
-            <div class="rc-stars" aria-hidden="true">★★★★★</div>
-            <div class="rc-count">рейтинг из 5</div>
-          </div>
-        </article>
+      <aside class="hero-transform" data-state="before" aria-label="Примеры изменения карточек: было и стало">
+        <p class="hero-transform-title">Примеры карточек: было → стало</p>
+        <div class="hero-transform-deck">
+          <figure class="hero-transform-card">
+            <div class="hero-transform-badge" aria-hidden="true"><span class="hero-label-before">Было</span><span class="hero-label-after">Стало</span></div>
+            <div class="hero-transform-images" aria-hidden="true">
+              <img src="assets/hero-pixel-before.webp" alt="" width="512" height="641" fetchpriority="high">
+              <img class="hero-example-after" src="assets/hero-pixel-after.webp" alt="" width="512" height="641">
+            </div>
+            <figcaption class="hero-example-description">Pixel. Пример: было 2,3 и 12 оценок, стало 4,9 и 243 оценки.</figcaption>
+          </figure>
+          <figure class="hero-transform-card">
+            <div class="hero-transform-badge" aria-hidden="true"><span class="hero-label-before">Было</span><span class="hero-label-after">Стало</span></div>
+            <div class="hero-transform-images" aria-hidden="true">
+              <img src="assets/hero-leaf-before.webp" alt="" width="512" height="641">
+              <img class="hero-example-after" src="assets/hero-leaf-after.webp" alt="" width="512" height="641">
+            </div>
+            <figcaption class="hero-example-description">Лист. Пример: было 2,3 и 18 оценок, стало 4,9 и 268 оценок.</figcaption>
+          </figure>
+          <figure class="hero-transform-card">
+            <div class="hero-transform-badge" aria-hidden="true"><span class="hero-label-before">Было</span><span class="hero-label-after">Стало</span></div>
+            <div class="hero-transform-images" aria-hidden="true">
+              <img src="assets/hero-forma-before.webp" alt="" width="512" height="641">
+              <img class="hero-example-after" src="assets/hero-forma-after.webp" alt="" width="512" height="641">
+            </div>
+            <figcaption class="hero-example-description">Forma. Пример: было 2,3 и 27 оценок, стало 5,0 и 428 оценок.</figcaption>
+          </figure>
+        </div>
+        <div class="hero-transform-controls" role="group" aria-label="Показать состояние карточек">
+          <button type="button" data-example-state="before" aria-pressed="true">Было</button>
+          <button type="button" data-example-state="after" aria-pressed="false">Стало</button>
+        </div>
       </aside>
       <ul class="hero-facts">
         <li>Первый результат — от 3 до 10&nbsp;дней</li>
@@ -394,6 +414,7 @@
 <script src="interactions.js?v=2"></script>
 <script src="range.js?v=1"></script>
 <script src="service-controls.js?v=1"></script>
+<script src="hero-transform.js?v=1"></script>
 
 
 
