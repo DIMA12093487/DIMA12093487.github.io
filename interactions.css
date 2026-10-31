@@ -17,7 +17,7 @@
   animation:glow-orbit 3.5s linear infinite; animation-play-state:paused;
 }
 .glow-ring.is-inview .glow-disc::before { animation-play-state:running; }
-.glow-ring.is-inview:hover .glow-disc::before,.glow-ring.is-inview:focus-visible .glow-disc::before { animation-duration:1s; }
+
 .glow-disc svg { width:18px; height:18px; transition:translate .25s ease; }
 .glow-ring:hover .glow-disc svg,.glow-ring:focus-visible .glow-disc svg { translate:2px -2px; }
 @keyframes glow-orbit { to { transform:rotate(360deg); } }
