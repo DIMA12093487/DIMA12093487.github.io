@@ -6,9 +6,8 @@
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let timer;
   let visible = true;
-  let hovered = false;
   let focused = false;
-  const paused = () => motion.matches || document.hidden || !visible || hovered || focused;
+  const paused = () => motion.matches || document.hidden || !visible || focused;
   function show(state) {
     root.dataset.state = state;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.exampleState === state)));
@@ -19,14 +18,13 @@
     timer = setTimeout(() => {
       show(root.dataset.state === 'before' ? 'after' : 'before');
       schedule();
-    }, root.dataset.state === 'before' ? 3200 : 6200);
+    }, root.dataset.state === 'before' ? 1400 : 2600);
   }
   buttons.forEach(button => button.addEventListener('click', () => {
     show(button.dataset.exampleState);
     schedule();
   }));
-  root.addEventListener('mouseenter', () => { hovered = true; schedule(); });
-  root.addEventListener('mouseleave', () => { hovered = false; schedule(); });
+
   root.addEventListener('focusin', () => { focused = true; schedule(); });
   root.addEventListener('focusout', event => { focused = root.contains(event.relatedTarget); schedule(); });
   document.addEventListener('visibilitychange', schedule);
