@@ -9,8 +9,7 @@
   const mine = root.querySelector('.is-company');
   const rating = mine.querySelector('[data-demo-rating]');
   const reviews = mine.querySelector('[data-demo-count]');
-  const pause = root.querySelector('.demo-pause');
-  let niche = 0, elapsed = 0, last = 0, visible = false, paused = false, frame = 0;
+  let niche = 0, elapsed = 0, last = 0, visible = false, frame = 0;
   function render(ms) {
     const reduced = motion.matches;
     const t = reduced ? 7000 : ms % 11000;
@@ -37,7 +36,7 @@
     render(elapsed);
     frame = requestAnimationFrame(tick);
   }
-  function active() { return visible && !document.hidden && !paused && !motion.matches; }
+  function active() { return visible && !document.hidden && !motion.matches; }
   function sync() {
     if (frame) cancelAnimationFrame(frame);
     frame = 0; last = 0;
@@ -45,12 +44,7 @@
     if (active()) frame = requestAnimationFrame(tick);
   }
 
-  pause.addEventListener('click', () => {
-    paused = !paused;
-    pause.textContent = paused ? '▶' : 'Ⅱ';
-    pause.setAttribute('aria-label', paused ? 'Продолжить демонстрацию' : 'Приостановить демонстрацию');
-    pause.setAttribute('aria-pressed', String(paused)); sync();
-  });
+
 
   document.addEventListener('visibilitychange', sync);
   motion.addEventListener('change', sync);
