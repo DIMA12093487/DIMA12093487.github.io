@@ -25,8 +25,8 @@
   <link rel="stylesheet" href="cleanup.css?v=2">
   <link rel="stylesheet" href="hero-transform.css?v=2">
   <link rel="stylesheet" href="service-controls.css?v=1">
-  <link rel="stylesheet" href="search-demo.css?v=1">
-  <script src="search-demo.js?v=1" defer></script>
+  <link rel="stylesheet" href="search-demo.css?v=2">
+  <script src="search-demo.js?v=2" defer></script>
 
   <script type="application/ld+json">
   {
@@ -141,26 +141,16 @@
       <div class="reputation-intro">
 
         <h2 id="whyTitle">Зачем мне это&nbsp;нужно?</h2>
-        <div class="search-demo" data-phase="search" aria-label="Демонстрация поиска и изменения видимости компании" aria-describedby="searchDemoNote">
-          <div class="demo-toolbar">
-            <div class="demo-niches" role="group" aria-label="Выберите нишу для демонстрации">
-              <button type="button" data-demo-niche="0" aria-pressed="true">Кофейня</button>
-              <button type="button" data-demo-niche="1" aria-pressed="false">Мебель</button>
-              <button type="button" data-demo-niche="2" aria-pressed="false">Красота</button>
-            </div>
-            <button type="button" class="demo-pause" aria-label="Приостановить демонстрацию" aria-pressed="false">Ⅱ</button>
-          </div>
+        <div class="search-demo" data-phase="search" aria-label="Демонстрация поиска и изменения видимости компании">
           <div class="demo-window">
-            <div class="demo-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><span class="demo-query">кофейня рядом</span></div>
+            <div class="demo-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><span class="demo-query">кофейня рядом</span><button type="button" class="demo-pause" aria-label="Приостановить демонстрацию" aria-pressed="false">Ⅱ</button></div>
             <ul class="demo-list" aria-label="Условная поисковая выдача">
               <li class="demo-row" style="--slot:0"><span class="demo-pos" aria-hidden="true">01</span><div class="demo-business"><strong>Популярное место</strong><div class="demo-meta"><span class="demo-stars">★ 4,7</span><span>210 оценок</span></div></div><span class="demo-distance">1,2 км</span></li>
               <li class="demo-row" style="--slot:1"><span class="demo-pos" aria-hidden="true">02</span><div class="demo-business"><strong>Компания по соседству</strong><div class="demo-meta"><span class="demo-stars">★ 4,5</span><span>96 оценок</span></div></div><span class="demo-distance">0,8 км</span></li>
               <li class="demo-row" style="--slot:2"><span class="demo-pos" aria-hidden="true">03</span><div class="demo-business"><strong>Ещё один вариант</strong><div class="demo-meta"><span class="demo-stars">★ 4,3</span><span>54 оценки</span></div></div><span class="demo-distance">1,6 км</span></li>
               <li class="demo-row is-company" style="--slot:3"><span class="demo-pos" aria-hidden="true">04</span><div class="demo-business"><strong>Ваша компания</strong><div class="demo-meta"><span class="demo-stars">★ <span data-demo-rating>4,0</span></span><span data-demo-count>15 оценок</span></div></div><span class="demo-distance">0,4 км</span></li>
             </ul>
-            <div class="demo-footer"><span class="demo-phase">Клиент ищет услугу</span><span class="demo-progress" aria-hidden="true"><i></i></span></div>
           </div>
-          <p class="demo-note" id="searchDemoNote">Демонстрация, не прогноз: оценки и позиции условные. Место в выдаче зависит не только от отзывов.</p>
         </div>
 
 

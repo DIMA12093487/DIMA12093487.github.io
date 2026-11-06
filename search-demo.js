@@ -9,10 +9,8 @@
   const mine = root.querySelector('.is-company');
   const rating = mine.querySelector('[data-demo-rating]');
   const reviews = mine.querySelector('[data-demo-count]');
-  const phase = root.querySelector('.demo-phase');
   const pause = root.querySelector('.demo-pause');
-  const buttons = [...root.querySelectorAll('[data-demo-niche]')];
-  let niche = 0, elapsed = 0, last = 0, visible = false, paused = false, focused = false, frame = 0;
+  let niche = 0, elapsed = 0, last = 0, visible = false, paused = false, frame = 0;
   function render(ms) {
     const reduced = motion.matches;
     const t = reduced ? 7000 : ms % 11000;
@@ -28,35 +26,32 @@
     rating.textContent = (4 + .9 * growth).toFixed(1).replace('.', ',');
     reviews.textContent = `${Math.round(15 + 85 * growth)} оценок`;
     root.dataset.phase = t < 1500 ? 'search' : t < 2600 ? 'results' : growth < 1 ? 'grow' : 'done';
-    phase.textContent = t < 1500 ? 'Клиент ищет услугу' : t < 2600 ? 'Сравнивает компании' : growth < 1 ? 'Меняется впечатление' : 'Ваша компания — на виду';
-    root.style.setProperty('--progress', growth.toFixed(3));
+
   }
   function tick(now) {
     frame = 0;
     if (!active()) { last = 0; return; }
     if (last) elapsed += Math.min(now - last, 100);
     last = now;
-    if (elapsed >= 11000) { elapsed %= 11000; niche = (niche + 1) % queries.length; updateButtons(); }
+    if (elapsed >= 11000) { elapsed %= 11000; niche = (niche + 1) % queries.length; }
     render(elapsed);
     frame = requestAnimationFrame(tick);
   }
-  function active() { return visible && !document.hidden && !paused && !focused && !motion.matches; }
+  function active() { return visible && !document.hidden && !paused && !motion.matches; }
   function sync() {
     if (frame) cancelAnimationFrame(frame);
     frame = 0; last = 0;
     if (motion.matches) render(7000);
     if (active()) frame = requestAnimationFrame(tick);
   }
-  function updateButtons() { buttons.forEach((b, i) => b.setAttribute('aria-pressed', String(i === niche))); }
-  buttons.forEach((button, i) => button.addEventListener('click', () => { niche = i; elapsed = 0; updateButtons(); render(0); sync(); }));
+
   pause.addEventListener('click', () => {
     paused = !paused;
     pause.textContent = paused ? '▶' : 'Ⅱ';
     pause.setAttribute('aria-label', paused ? 'Продолжить демонстрацию' : 'Приостановить демонстрацию');
     pause.setAttribute('aria-pressed', String(paused)); sync();
   });
-  root.addEventListener('focusin', () => { focused = true; sync(); });
-  root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) { focused = false; sync(); } });
+
   document.addEventListener('visibilitychange', sync);
   motion.addEventListener('change', sync);
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: .15 }).observe(root);
